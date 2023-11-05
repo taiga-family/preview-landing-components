@@ -56,7 +56,7 @@
             },
             "configurations": {
                 "production": {
-                    "browserTarget": "demo:build:production"
+                    "browserTarget": "demo:build:development"
                 }
             }
         },
@@ -65,11 +65,9 @@
             "options": {
                 "parallel": false,
                 "commands": [
-                    "rm -rf dist/demo && sleep 10",
-                    "npx nx server demo && sleep 10",
-                    "npx nx prerender demo && sleep 10",
+                    "npx nx prerender demo",
                     "cp dist/demo/index.html dist/demo/404.html",
-                    "rm -rf dist/demo/index.original.html"
+                    "rm -rf dist/demo-server dist/demo/index.original.html"
                 ]
             }
         },
@@ -85,7 +83,7 @@
         "server": {
             "executor": "@angular-devkit/build-angular:server",
             "options": {
-                "outputPath": "dist/demo/server",
+                "outputPath": "dist/demo-server",
                 "main": "apps/demo/server.ts",
                 "tsConfig": "apps/demo/tsconfig.server.json"
             },
