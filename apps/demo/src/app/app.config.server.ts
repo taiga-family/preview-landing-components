@@ -6,8 +6,9 @@
  * found in the LICENSE file at https://angular.io/license
  */
 
-import {mergeApplicationConfig, ApplicationConfig} from '@angular/core';
+import {ApplicationConfig, mergeApplicationConfig} from '@angular/core';
 import {provideServerRendering} from '@angular/platform-server';
+
 import {appConfig} from './app.config';
 
 const serverConfig: ApplicationConfig = {

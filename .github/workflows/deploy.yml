@@ -16,7 +16,7 @@ jobs:
       - uses: taiga-family/ci/actions/deploy/github-pages@v1.36.2
         with:
           token: ${{ secrets.TAIGA_FAMILY_BOT_PAT }}
-          folder: dist/demo/browser
+          folder: dist/demo
 
 concurrency:
   group: deploy-${{ github.head_ref }}
