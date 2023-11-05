@@ -12,7 +12,7 @@
                 "main": "apps/demo/src/main.ts",
                 "polyfills": "apps/demo/src/polyfills.ts",
                 "tsConfig": "apps/demo/tsconfig.app.json",
-                "baseHref": "./",
+                "baseHref": "/",
                 "assets": [
                     "apps/demo/src/favicon.ico",
                     "apps/demo/src/assets",
@@ -44,6 +44,12 @@
                     "extractLicenses": true,
                     "vendorChunk": false,
                     "buildOptimizer": true
+                },
+                "github": {
+                    "baseHref": "./",
+                    "sourceMap": false,
+                    "buildOptimizer": true,
+                    "vendorChunk": false
                 }
             },
             "defaultConfiguration": ""
@@ -64,19 +70,16 @@
             "options": {
                 "parallel": false,
                 "commands": [
-                    "echo 'Github pages require special 404.html'",
-                    "echo 'Read more: https://angular.io/guide/deployment#deploy-to-github-pages'",
-                    "echo ------",
-                    "nx run demo:build:production --base-href=/preview-landing-components/",
+                    "nx run demo:prerender:github",
                     "cp dist/demo/index.html dist/demo/404.html",
-                    "nx run demo:prerender:production"
+                    "rm dist/demo/index.original.html"
                 ]
             }
         },
         "prerender": {
             "executor": "@nguniversal/builders:prerender",
             "options": {
-                "browserTarget": "demo:build",
+                "browserTarget": "demo:build:github",
                 "serverTarget": "demo:server:production",
                 "guessRoutes": false,
                 "routes": ["/"]

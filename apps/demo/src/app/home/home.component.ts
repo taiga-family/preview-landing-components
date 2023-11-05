@@ -1,5 +1,5 @@
 import {CommonModule} from '@angular/common';
-import {ChangeDetectionStrategy, Component} from '@angular/core';
+import {ChangeDetectionStrategy, Component, ViewEncapsulation} from '@angular/core';
 import {FormsModule} from '@angular/forms';
 import {TuiDay} from '@taiga-ui/cdk';
 import {
@@ -22,6 +22,7 @@ import {EventPluginsModule} from '@tinkoff/ng-event-plugins';
     selector: 'home',
     templateUrl: './home.component.html',
     styleUrls: ['./home.component.less'],
+    encapsulation: ViewEncapsulation.None,
     changeDetection: ChangeDetectionStrategy.OnPush,
     imports: [
         CommonModule,
