@@ -1,6 +1,7 @@
 {
     "extends": "./tsconfig.app.json",
     "compilerOptions": {
+        "removeComments": true,
         "outDir": "./out-tsc/server",
         "types": ["node"]
     },

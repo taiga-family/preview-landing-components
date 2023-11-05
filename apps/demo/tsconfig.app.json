@@ -1,13 +1,9 @@
 {
     "extends": "../../tsconfig.json",
-    "angularCompilerOptions": {
-        "strictMetadataEmit": false,
-        "compilationMode": "full"
-    },
     "compilerOptions": {
+        "removeComments": true,
         "baseUrl": ".",
         "outDir": "../../dist/out-tsc",
-        "useDefineForClassFields": false,
         "types": []
     },
     "files": ["src/main.ts", "src/polyfills.ts"]

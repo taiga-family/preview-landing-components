@@ -31,6 +31,7 @@
             },
             "configurations": {
                 "production": {
+                    "baseHref": "./",
                     "fileReplacements": [
                         {
                             "replace": "apps/demo/src/environments/environment.ts",
@@ -38,7 +39,7 @@
                         }
                     ],
                     "optimization": true,
-                    "outputHashing": "all",
+                    "outputHashing": "media",
                     "sourceMap": false,
                     "namedChunks": false,
                     "extractLicenses": true,
@@ -70,16 +71,17 @@
             "options": {
                 "parallel": false,
                 "commands": [
-                    "nx run demo:prerender:github",
+                    "rm -rf dist/demo",
+                    "npx nx prerender demo",
                     "cp dist/demo/index.html dist/demo/404.html",
-                    "rm dist/demo/index.original.html"
+                    "rm -rf dist/demo/server dist/demo/index.original.html"
                 ]
             }
         },
         "prerender": {
             "executor": "@nguniversal/builders:prerender",
             "options": {
-                "browserTarget": "demo:build:github",
+                "browserTarget": "demo:build:production",
                 "serverTarget": "demo:server:production",
                 "guessRoutes": false,
                 "routes": ["/"]
@@ -94,7 +96,10 @@
             },
             "configurations": {
                 "production": {
-                    "outputHashing": "media"
+                    "outputHashing": "media",
+                    "sourceMap": false,
+                    "buildOptimizer": true,
+                    "vendorChunk": false
                 }
             },
             "defaultConfiguration": "production"

@@ -35,8 +35,8 @@
     justify-content: space-between;
 }
 
-.button,
-.error {
+.button[data-size][data-shape],
+.error[data-size][data-shape] {
     .transition(~'color, background');
     background: var(--tui-base-02);
     color: var(--tui-primary);
@@ -48,7 +48,7 @@
     }
 }
 
-.error {
+.error[data-size][data-shape] {
     color: var(--tui-negative);
 
     &:hover,

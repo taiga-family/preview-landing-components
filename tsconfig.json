@@ -1,9 +1,13 @@
 {
     "extends": "@taiga-ui/tsconfig",
+    "angularCompilerOptions": {
+        "compilationMode": "full"
+    },
     "compilerOptions": {
         "rootDir": ".",
         "baseUrl": ".",
         "module": "esnext",
+        "removeComments": true,
         "useDefineForClassFields": false,
         "typeRoots": ["node_modules/@types"]
     }
