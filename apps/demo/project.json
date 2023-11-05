@@ -67,7 +67,7 @@
                     "echo 'Github pages require special 404.html'",
                     "echo 'Read more: https://angular.io/guide/deployment#deploy-to-github-pages'",
                     "echo ------",
-                    "nx run demo:build:production",
+                    "nx run demo:build:production --base-href=/preview-landing-components/",
                     "cp dist/demo/index.html dist/demo/404.html",
                     "nx run demo:prerender:production"
                 ]
