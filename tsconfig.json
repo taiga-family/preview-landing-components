@@ -1,0 +1,10 @@
+{
+    "extends": "@taiga-ui/tsconfig",
+    "compilerOptions": {
+        "rootDir": ".",
+        "baseUrl": ".",
+        "module": "esnext",
+        "useDefineForClassFields": false,
+        "typeRoots": ["node_modules/@types"]
+    }
+}
