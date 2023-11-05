@@ -71,11 +71,12 @@
             "options": {
                 "parallel": false,
                 "commands": [
-                    "rm -rf dist/demo",
-                    "npx nx server demo",
-                    "npx nx prerender demo",
+                    "rm -rf dist/demo && sleep 5",
+                    "npx nx build demo && sleep 5",
+                    "npx nx server demo && sleep 5",
+                    "npx nx prerender demo && sleep 5",
                     "cp dist/demo/index.html dist/demo/404.html",
-                    "rm -rf dist/demo/server dist/demo/index.original.html"
+                    "rm -rf dist/demo//server dist/demo/index.original.html"
                 ]
             }
         },
