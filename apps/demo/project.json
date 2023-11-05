@@ -66,6 +66,19 @@
                 }
             }
         },
+        "build-gh-pages": {
+            "executor": "nx:run-commands",
+            "options": {
+                "parallel": false,
+                "commands": [
+                    "rm -rf dist/demo",
+                    "npx nx server demo",
+                    "npx nx prerender demo",
+                    "cp dist/demo/index.html dist/demo/404.html",
+                    "rm -rf dist/demo/server dist/demo/index.original.html"
+                ]
+            }
+        },
         "prerender": {
             "executor": "@nguniversal/builders:prerender",
             "options": {

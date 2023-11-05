@@ -13,12 +13,7 @@ jobs:
       - uses: taiga-family/ci/actions/setup/node@v1.36.2
       - run: npm run lint
       - run: npm run prettier -- --check
-      - run: |
-          rm -rf dist/demo
-          npx nx prerender demo
-          cp dist/demo/index.html dist/demo/404.html
-          rm -rf dist/demo/server dist/demo/index.original.html
-
+      - run: npx nx build-gh-pages demo
       - uses: taiga-family/ci/actions/deploy/github-pages@v1.36.2
         with:
           token: ${{ secrets.TAIGA_FAMILY_BOT_PAT }}
