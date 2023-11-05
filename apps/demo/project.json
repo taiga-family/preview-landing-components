@@ -45,12 +45,6 @@
                     "extractLicenses": true,
                     "vendorChunk": false,
                     "buildOptimizer": true
-                },
-                "github": {
-                    "baseHref": "./",
-                    "sourceMap": false,
-                    "buildOptimizer": true,
-                    "vendorChunk": false
                 }
             },
             "defaultConfiguration": ""
@@ -71,12 +65,11 @@
             "options": {
                 "parallel": false,
                 "commands": [
-                    "rm -rf dist/demo && sleep 5",
-                    "npx nx build demo && sleep 5",
-                    "npx nx server demo && sleep 5",
-                    "npx nx prerender demo && sleep 5",
+                    "rm -rf dist/demo && sleep 10",
+                    "npx nx server demo && sleep 10",
+                    "npx nx prerender demo && sleep 10",
                     "cp dist/demo/index.html dist/demo/404.html",
-                    "rm -rf dist/demo//server dist/demo/index.original.html"
+                    "rm -rf dist/demo/index.original.html"
                 ]
             }
         },
