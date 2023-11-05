@@ -1,5 +1,5 @@
 /*!*************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[8].rules[0].oneOf[0].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[8].rules[0].oneOf[0].use[2]!./node_modules/less-loader/dist/cjs.js??ruleSet[1].rules[8].rules[1].use[0]!./apps/demo/src/styles.less?ngGlobalStyle ***!
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[7].rules[0].oneOf[0].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[7].rules[0].oneOf[0].use[2]!./node_modules/less-loader/dist/cjs.js??ruleSet[1].rules[7].rules[1].use[0]!./apps/demo/src/styles.less?ngGlobalStyle ***!
   \*************************************************************************************************************************************************************************************************************************************************************************************************************/
 /**
  * @deprecated remove in 4.0
@@ -3051,7 +3051,7 @@ app {
 }
 
 /*!******************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[8].rules[0].oneOf[0].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[8].rules[0].oneOf[0].use[2]!./node_modules/less-loader/dist/cjs.js??ruleSet[1].rules[8].rules[1].use[0]!./node_modules/@taiga-ui/core/styles/taiga-ui-theme.less?ngGlobalStyle ***!
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[7].rules[0].oneOf[0].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[7].rules[0].oneOf[0].use[2]!./node_modules/less-loader/dist/cjs.js??ruleSet[1].rules[7].rules[1].use[0]!./node_modules/@taiga-ui/core/styles/taiga-ui-theme.less?ngGlobalStyle ***!
   \******************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 :root {
   --tui-heading-font: 'Manrope', -apple-system, 'BlinkMacSystemFont', system-ui, 'Roboto', 'Segoe UI', 'Helvetica Neue', sans-serif;
@@ -4150,5 +4150,3 @@ tui-primitive-calendar [data-type='weekend'] {
   color: var(--tui-negative);
 }
 
-
-/*# sourceMappingURL=styles.css.map*/
