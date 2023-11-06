@@ -1,5 +1,24 @@
 {
     "$schema": "https://docs.renovatebot.com/renovate-schema.json",
     "extends": ["github>taiga-family/renovate-config"],
-    "automerge": false
+    "packageRules": [
+        {
+            "matchUpdateTypes": ["major"],
+            "matchPackagePatterns": [
+                "^@angular.*",
+                "^@schematics.*",
+                "^@nguniversal.*",
+                "jest-preset-angular",
+                "ng-yandex-metrika",
+                "ngx-highlightjs",
+                "ngx-markdown",
+                "ng-packagr",
+                "parse5",
+                "core-js",
+                "zone.js",
+                "rxjs"
+            ],
+            "enabled": true
+        }
+    ]
 }
