@@ -2,7 +2,7 @@ name: 🤖 Auto approve validation
 on: pull_request
 
 env:
-  PR_JOBS_NAME: '[ "Deploy" ]'
+  PR_JOBS_NAME: '[ "Build" ]'
 
 jobs:
   setup:
