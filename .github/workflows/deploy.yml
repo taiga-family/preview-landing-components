@@ -8,11 +8,11 @@ jobs:
     name: Deploy
     runs-on: ubuntu-latest
     steps:
-      - uses: taiga-family/ci/actions/setup/checkout@v1.36.2
-      - uses: taiga-family/ci/actions/setup/variables@v1.36.2
-      - uses: taiga-family/ci/actions/setup/node@v1.36.2
+      - uses: taiga-family/ci/actions/setup/checkout@v1.38.0
+      - uses: taiga-family/ci/actions/setup/variables@v1.38.0
+      - uses: taiga-family/ci/actions/setup/node@v1.38.0
       - run: npx nx build-gh-pages demo
-      - uses: taiga-family/ci/actions/deploy/github-pages@v1.36.2
+      - uses: taiga-family/ci/actions/deploy/github-pages@v1.38.0
         with:
           token: ${{ secrets.TAIGA_FAMILY_BOT_PAT }}
           folder: dist/demo
