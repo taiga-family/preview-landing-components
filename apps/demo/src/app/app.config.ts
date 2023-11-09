@@ -12,8 +12,8 @@ export const appConfig: ApplicationConfig = {
     providers: [
         provideRouter(routes),
         importProvidersFrom(
-            EventPluginsModule,
             BrowserAnimationsModule,
+            EventPluginsModule,
             TuiRootModule,
             TuiDialogModule,
             TuiPushModule,
