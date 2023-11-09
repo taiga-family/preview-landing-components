@@ -51,7 +51,7 @@
         "@taiga-ui/cdk": "3.53.0",
         "@taiga-ui/commitlint-config": "0.3.3",
         "@taiga-ui/core": "3.53.0",
-        "@taiga-ui/eslint-plugin-experience": "0.18.0",
+        "@taiga-ui/eslint-plugin-experience": "0.19.0",
         "@taiga-ui/icons": "3.53.0",
         "@taiga-ui/kit": "3.53.0",
         "@taiga-ui/prettier-config": "0.4.1",

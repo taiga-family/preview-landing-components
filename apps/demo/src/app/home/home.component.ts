@@ -20,10 +20,6 @@ import {EventPluginsModule} from '@tinkoff/ng-event-plugins';
 @Component({
     standalone: true,
     selector: 'home',
-    templateUrl: './home.component.html',
-    styleUrls: ['./home.component.less'],
-    encapsulation: ViewEncapsulation.None,
-    changeDetection: ChangeDetectionStrategy.OnPush,
     imports: [
         CommonModule,
         FormsModule,
@@ -38,6 +34,10 @@ import {EventPluginsModule} from '@tinkoff/ng-event-plugins';
         TuiHintModule,
         TuiSliderModule,
     ],
+    templateUrl: './home.component.html',
+    styleUrls: ['./home.component.less'],
+    encapsulation: ViewEncapsulation.None,
+    changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HomeComponent {
     readonly labels = ['New', 'Read', 'Archived', 'Junk'];
