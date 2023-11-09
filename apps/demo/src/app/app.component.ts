@@ -5,9 +5,9 @@ import {RouterOutlet} from '@angular/router';
 @Component({
     standalone: true,
     selector: 'app',
-    encapsulation: ViewEncapsulation.None,
     imports: [CommonModule, RouterOutlet],
     template: '<router-outlet></router-outlet>',
+    encapsulation: ViewEncapsulation.None,
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AppComponent {}
