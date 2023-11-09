@@ -5,14 +5,14 @@
     "sourceRoot": "apps/demo/src",
     "targets": {
         "build": {
-            "executor": "@angular-devkit/build-angular:browser",
+            "executor": "@angular-devkit/build-angular:application",
             "options": {
                 "outputPath": "dist/demo",
                 "index": "apps/demo/src/index.html",
-                "main": "apps/demo/src/main.ts",
-                "polyfills": "apps/demo/src/polyfills.ts",
+                "browser": "apps/demo/src/main.ts",
+                "polyfills": ["zone.js", "apps/demo/src/polyfills.ts"],
                 "tsConfig": "apps/demo/tsconfig.app.json",
-                "baseHref": "/",
+                "baseHref": "./",
                 "assets": [
                     "apps/demo/src/favicon.ico",
                     "apps/demo/src/assets",
@@ -24,78 +24,38 @@
                 ],
                 "styles": ["apps/demo/src/styles.less", "node_modules/@taiga-ui/core/styles/taiga-ui-theme.less"],
                 "scripts": [],
-                "extractLicenses": false,
-                "buildOptimizer": false,
-                "sourceMap": true,
-                "optimization": false
-            },
-            "configurations": {
-                "production": {
-                    "baseHref": "./",
-                    "fileReplacements": [
-                        {
-                            "replace": "apps/demo/src/environments/environment.ts",
-                            "with": "apps/demo/src/environments/environment.prod.ts"
-                        }
-                    ],
-                    "optimization": true,
-                    "outputHashing": "media",
-                    "sourceMap": false,
-                    "namedChunks": false,
-                    "extractLicenses": true,
-                    "vendorChunk": false,
-                    "buildOptimizer": true
+                "server": "apps/demo/src/main.server.ts",
+                "prerender": {
+                    "discoverRoutes": false,
+                    "routesFile": "apps/demo/src/routes.txt"
+                },
+                "ssr": {
+                    "entry": "apps/demo/server.ts"
                 }
             },
-            "defaultConfiguration": ""
-        },
-        "serve": {
-            "executor": "@angular-devkit/build-angular:dev-server",
-            "options": {
-                "buildTarget": "demo:build"
-            },
             "configurations": {
                 "production": {
-                    "buildTarget": "demo:build:development"
-                }
-            }
-        },
-        "build-gh-pages": {
-            "executor": "nx:run-commands",
-            "options": {
-                "parallel": false,
-                "commands": [
-                    "npx nx prerender demo",
-                    "cp dist/demo/index.html dist/demo/404.html",
-                    "rm -rf dist/demo-server dist/demo/index.original.html"
-                ]
-            }
-        },
-        "prerender": {
-            "executor": "@nguniversal/builders:prerender",
-            "options": {
-                "buildTarget": "demo:build:production",
-                "serverTarget": "demo:server:production",
-                "guessRoutes": false,
-                "routes": ["/"]
-            }
-        },
-        "server": {
-            "executor": "@angular-devkit/build-angular:server",
-            "options": {
-                "outputPath": "dist/demo-server",
-                "main": "apps/demo/server.ts",
-                "tsConfig": "apps/demo/tsconfig.server.json"
-            },
-            "configurations": {
-                "production": {
-                    "outputHashing": "media",
-                    "sourceMap": false,
-                    "buildOptimizer": true,
-                    "vendorChunk": false
+                    "outputHashing": "all"
+                },
+                "development": {
+                    "optimization": false,
+                    "extractLicenses": false,
+                    "sourceMap": true
                 }
             },
             "defaultConfiguration": "production"
+        },
+        "serve": {
+            "executor": "@angular-devkit/build-angular:dev-server",
+            "configurations": {
+                "production": {
+                    "buildTarget": "demo:build:production"
+                },
+                "development": {
+                    "buildTarget": "demo:build:development"
+                }
+            },
+            "defaultConfiguration": "development"
         }
     }
 }

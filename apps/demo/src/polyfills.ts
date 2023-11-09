@@ -1,1 +1,1 @@
-import 'zone.js'; // Included with Angular CLI.
+import '@ng-web-apis/universal/mocks';

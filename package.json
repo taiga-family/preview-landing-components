@@ -19,7 +19,6 @@
         ]
     },
     "devDependencies": {
-        "@angular-builders/custom-webpack": "16.0.1",
         "@angular-devkit/build-angular": "17.0.0",
         "@angular-devkit/core": "17.0.0",
         "@angular-devkit/schematics": "17.0.0",
@@ -39,8 +38,8 @@
         "@angular/platform-browser-dynamic": "17.0.1",
         "@angular/platform-server": "17.0.1",
         "@angular/router": "17.0.1",
-        "@nguniversal/builders": "16.2.0",
-        "@nguniversal/express-engine": "16.2.0",
+        "@angular/ssr": "17.0.0",
+        "@ng-web-apis/universal": "3.0.7",
         "@nx/angular": "17.0.3",
         "@nx/node": "17.0.3",
         "@nx/workspace": "17.0.3",
@@ -57,7 +56,7 @@
         "@taiga-ui/prettier-config": "0.4.1",
         "@taiga-ui/stylelint-config": "0.6.0",
         "@taiga-ui/styles": "3.53.0",
-        "@taiga-ui/tsconfig": "0.2.4",
+        "@taiga-ui/tsconfig": "0.3.0",
         "@types/minimatch": "5.1.2",
         "@types/node": "20.9.0",
         "eslint": "8.53.0",

@@ -1,4 +1,5 @@
 import {ApplicationConfig, importProvidersFrom} from '@angular/core';
+import {provideClientHydration} from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {provideRouter} from '@angular/router';
 import {TuiDialogModule, TuiRootModule} from '@taiga-ui/core';
@@ -17,5 +18,6 @@ export const appConfig: ApplicationConfig = {
             TuiDialogModule,
             TuiPushModule,
         ),
+        provideClientHydration(),
     ],
 };

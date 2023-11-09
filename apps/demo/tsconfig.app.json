@@ -1,10 +1,12 @@
 {
     "extends": "../../tsconfig.json",
-    "compilerOptions": {
-        "removeComments": true,
-        "baseUrl": ".",
-        "outDir": "../../dist/out-tsc",
-        "types": []
+    "angularCompilerOptions": {
+        "compilationMode": "full"
     },
-    "files": ["src/main.ts", "src/polyfills.ts"]
+    "compilerOptions": {
+        "outDir": "./out-tsc/app",
+        "types": ["node"]
+    },
+    "files": ["src/main.ts", "src/polyfills.ts", "src/main.server.ts", "server.ts"],
+    "include": ["src/**/*.d.ts"]
 }
