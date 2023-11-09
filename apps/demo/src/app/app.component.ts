@@ -1,12 +1,12 @@
-import {CommonModule} from '@angular/common';
 import {ChangeDetectionStrategy, Component, ViewEncapsulation} from '@angular/core';
 import {RouterOutlet} from '@angular/router';
+import {TuiRootModule} from '@taiga-ui/core';
 
 @Component({
     standalone: true,
     selector: 'app',
-    imports: [CommonModule, RouterOutlet],
-    template: '<router-outlet></router-outlet>',
+    imports: [TuiRootModule, RouterOutlet],
+    templateUrl: './app.component.html',
     encapsulation: ViewEncapsulation.None,
     changeDetection: ChangeDetectionStrategy.OnPush,
 })

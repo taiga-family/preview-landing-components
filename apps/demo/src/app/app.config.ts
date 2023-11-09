@@ -1,18 +1,21 @@
 import {ApplicationConfig, importProvidersFrom} from '@angular/core';
-import {BrowserModule} from '@angular/platform-browser';
-import {
-    BrowserAnimationsModule,
-    provideAnimations,
-} from '@angular/platform-browser/animations';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {provideRouter} from '@angular/router';
-import {TuiRootModule} from '@taiga-ui/core';
+import {TuiDialogModule, TuiRootModule} from '@taiga-ui/core';
+import {TuiPushModule} from '@taiga-ui/kit';
+import {EventPluginsModule} from '@tinkoff/ng-event-plugins';
 
 import {routes} from './app.routes';
 
 export const appConfig: ApplicationConfig = {
     providers: [
-        provideAnimations(),
         provideRouter(routes),
-        importProvidersFrom(BrowserModule, BrowserAnimationsModule, TuiRootModule),
+        importProvidersFrom(
+            EventPluginsModule,
+            BrowserAnimationsModule,
+            TuiRootModule,
+            TuiDialogModule,
+            TuiPushModule,
+        ),
     ],
 };

@@ -6,6 +6,10 @@
     margin: 0;
 }
 
+.t-overlay {
+    display: none !important;
+}
+
 .flex {
     display: flex;
 }
@@ -18,7 +22,7 @@
 .calendar {
     .shadow(2);
     border-radius: var(--tui-radius-m);
-    border: 1px solid var(--tui-base-03);
+    border: 0.0625rem solid var(--tui-base-03);
     margin-top: 0.25rem;
     width: 18rem;
     box-sizing: border-box;
@@ -54,5 +58,94 @@
     &:hover,
     &:active {
         color: var(--tui-negative-hover);
+    }
+}
+
+tui-dialog[data-appearance='call'][data-size] {
+    border-radius: 0.25rem;
+    width: 25rem;
+    padding: 0;
+    border: none;
+    margin: 1.25rem auto;
+
+    & > .t-content {
+        padding: 0.5rem 1rem;
+        box-shadow: 0 0 0.1875rem #1f1f1f;
+
+        --border-width: 0.1875rem;
+
+        &::after {
+            position: absolute;
+            content: '';
+            top: calc(-1 * var(--border-width));
+            left: calc(-1 * var(--border-width));
+            z-index: -1;
+            width: calc(100% + var(--border-width) * 2);
+            height: calc(100% + var(--border-width) * 2);
+            background: linear-gradient(
+                60deg,
+                hsl(224, 85%, 66%),
+                hsl(269, 85%, 66%),
+                hsl(314, 85%, 66%),
+                hsl(359, 85%, 66%),
+                hsl(44, 85%, 66%),
+                hsl(89, 85%, 66%),
+                hsl(134, 85%, 66%),
+                hsl(179, 85%, 66%)
+            );
+            background-size: 300% 300%;
+            background-position: 0 50%;
+            border-radius: calc(2 * var(--border-width));
+            animation: moveGradient 4s alternate infinite;
+        }
+    }
+
+    & > .t-filler,
+    &::after {
+        display: none;
+    }
+
+    .call {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .person {
+        display: flex;
+        align-items: center;
+        gap: 0.625rem;
+
+        img {
+            width: 2.25rem;
+            border-radius: 0.625rem;
+            border: 0.0625rem solid var(--tui-base-05);
+        }
+    }
+
+    .missed,
+    .income {
+        border-radius: 50%;
+        color: #fff;
+    }
+
+    .missed [data-appearance='custom'] {
+        background: rgb(210, 58, 71);
+        transform: rotate(135deg);
+    }
+
+    .income [data-appearance='custom'] {
+        background: rgb(39, 187, 100);
+    }
+
+    .buttons {
+        display: flex;
+        gap: 0.625rem;
+    }
+}
+
+@keyframes moveGradient {
+    50% {
+        background-position: 100% 50%;
     }
 }
