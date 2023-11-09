@@ -1,0 +1,18 @@
+name: ⚙️ Bundle size
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  tracking:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: taiga-family/ci/actions/setup/checkout@v1.39.1
+      - uses: taiga-family/ci/actions/setup/variables@v1.39.1
+      - uses: taiga-family/ci/actions/setup/node@v1.39.1
+      - run: npx nx build demo -- --prod
+      - run: npx --yes bundlemon --config .github/.bundlemonrc.json
+        continue-on-error: true
+        env:
+          CI_COMMIT_SHA: ${{ env.CI_COMMIT_SHA }}
