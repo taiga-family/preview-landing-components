@@ -52,11 +52,11 @@
         "serve": {
             "executor": "@angular-devkit/build-angular:dev-server",
             "options": {
-                "browserTarget": "demo:build"
+                "buildTarget": "demo:build"
             },
             "configurations": {
                 "production": {
-                    "browserTarget": "demo:build:development"
+                    "buildTarget": "demo:build:development"
                 }
             }
         },
@@ -74,7 +74,7 @@
         "prerender": {
             "executor": "@nguniversal/builders:prerender",
             "options": {
-                "browserTarget": "demo:build:production",
+                "buildTarget": "demo:build:production",
                 "serverTarget": "demo:server:production",
                 "guessRoutes": false,
                 "routes": ["/"]
