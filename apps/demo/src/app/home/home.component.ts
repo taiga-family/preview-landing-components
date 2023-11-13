@@ -27,6 +27,7 @@ import {
     TuiSliderModule,
     TuiToggleModule,
 } from '@taiga-ui/kit';
+import {NgDompurifyModule} from '@tinkoff/ng-dompurify';
 
 @Component({
     standalone: true,
@@ -47,6 +48,7 @@ import {
         TuiPushModule,
         TuiLinkModule,
         TuiDropdownModule,
+        NgDompurifyModule,
     ],
     templateUrl: './home.component.html',
     styleUrls: ['./home.component.less'],
