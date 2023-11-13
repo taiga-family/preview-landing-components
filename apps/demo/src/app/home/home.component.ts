@@ -4,6 +4,7 @@ import {
     ChangeDetectorRef,
     Component,
     inject,
+    SecurityContext,
     TemplateRef,
     ViewEncapsulation,
 } from '@angular/core';
@@ -27,7 +28,7 @@ import {
     TuiSliderModule,
     TuiToggleModule,
 } from '@taiga-ui/kit';
-import {NgDompurifyModule} from '@tinkoff/ng-dompurify';
+import {NgDompurifyModule, NgDompurifySanitizer} from '@tinkoff/ng-dompurify';
 
 @Component({
     standalone: true,
@@ -56,6 +57,7 @@ import {NgDompurifyModule} from '@tinkoff/ng-dompurify';
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HomeComponent {
+    private readonly dompurifySanitizer = inject(NgDompurifySanitizer);
     private readonly dialogs = inject(TuiDialogService);
     private readonly cd = inject(ChangeDetectorRef);
 
@@ -82,5 +84,9 @@ export class HomeComponent {
     toggle(open: boolean): void {
         this.notification = open;
         this.cd.detectChanges();
+    }
+
+    purify(value: string): string {
+        return this.dompurifySanitizer.sanitize(SecurityContext.HTML, value);
     }
 }

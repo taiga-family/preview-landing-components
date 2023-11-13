@@ -4,11 +4,16 @@
     components
 </h2>
 <tui-input-tag
-    tuiHintContent="Customizable for any use case"
     class="tui-space_vertical-10"
+    [tuiHintContent]="hint"
     [tuiTextfieldLabelOutside]="true"
     [(ngModel)]="tags"
 ></tui-input-tag>
+
+<ng-template #hint>
+    <span [innerHtml]="purify('Customizable for <b>any use</b> case')"></span>
+</ng-template>
+
 <div class="flex">
     <div class="date">
         <tui-input-date
