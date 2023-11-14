@@ -12,7 +12,7 @@
         {
             "path": "demo/browser/styles-<hash>.css",
             "maxPercentIncrease": 10
-        },
+        }
     ],
     "groups": [
         {
