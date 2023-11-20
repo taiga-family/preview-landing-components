@@ -10,6 +10,19 @@ import express from 'express';
 
 import bootstrap from './src/main.server';
 
+function run(): void {
+    const port = process.env[`PORT`] || 4000;
+
+    // Start up the Node server
+    const server = app();
+
+    server.listen(port, () => {
+        console.info(`Node Express server listening on http://localhost:${port}`);
+    });
+}
+
+run();
+
 // The Express app is exported so that it can be used by serverless Functions.
 export function app(): express.Express {
     const server = express();
@@ -54,16 +67,3 @@ export function app(): express.Express {
 
     return server;
 }
-
-function run(): void {
-    const port = process.env[`PORT`] || 4000;
-
-    // Start up the Node server
-    const server = app();
-
-    server.listen(port, () => {
-        console.info(`Node Express server listening on http://localhost:${port}`);
-    });
-}
-
-run();
