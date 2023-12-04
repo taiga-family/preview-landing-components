@@ -26,7 +26,7 @@
                 "scripts": [],
                 "server": "apps/demo/src/main.server.ts",
                 "prerender": {
-                    "discoverRoutes": false,
+                    "discoverRoutes": true,
                     "routesFile": "apps/demo/src/routes.txt"
                 },
                 "ssr": {
