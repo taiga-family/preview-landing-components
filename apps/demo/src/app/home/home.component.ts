@@ -56,7 +56,7 @@ import {NgDompurifyModule, NgDompurifySanitizer} from '@tinkoff/ng-dompurify';
     encapsulation: ViewEncapsulation.None,
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class HomeComponent {
+export default class HomeComponent {
     private readonly dompurifySanitizer = inject(NgDompurifySanitizer);
     private readonly dialogs = inject(TuiDialogService);
     private readonly cd = inject(ChangeDetectorRef);

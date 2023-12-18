@@ -11,7 +11,7 @@ import express from 'express';
 import bootstrap from './src/main.server';
 
 function run(): void {
-    const port = process.env[`PORT`] || 4000;
+    const port = process.env['PORT'] || 4000;
 
     // Start up the Node server
     const server = app();
@@ -27,26 +27,26 @@ run();
 export function app(): express.Express {
     const server = express();
     const serverDistFolder = dirname(fileURLToPath(import.meta.url));
-    const browserDistFolder = resolve(serverDistFolder, `../browser`);
-    const indexHtml = join(serverDistFolder, `index.server.html`);
+    const browserDistFolder = resolve(serverDistFolder, '../browser');
+    const indexHtml = join(serverDistFolder, 'index.server.html');
 
     const commonEngine = new CommonEngine();
 
-    server.set(`view engine`, `html`);
-    server.set(`views`, browserDistFolder);
+    server.set('view engine', 'html');
+    server.set('views', browserDistFolder);
 
     // Example Express Rest API endpoints
     // server.get('/api/**', (req, res) => { });
     // Serve static files from /browser
     server.get(
-        `*.*`,
+        '*.*',
         express.static(browserDistFolder, {
-            maxAge: `1y`,
+            maxAge: '1y',
         }),
     );
 
     // All regular routes use the Angular engine
-    server.get(`*`, (req, res, next) => {
+    server.get('*', (req, res, next) => {
         const {protocol, originalUrl, baseUrl, headers} = req;
 
         commonEngine
