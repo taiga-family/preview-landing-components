@@ -53,7 +53,7 @@
         "@taiga-ui/eslint-plugin-experience": "0.53.3",
         "@taiga-ui/icons": "3.65.0",
         "@taiga-ui/kit": "3.65.0",
-        "@taiga-ui/prettier-config": "0.8.2",
+        "@taiga-ui/prettier-config": "0.8.3",
         "@taiga-ui/stylelint-config": "0.14.0",
         "@taiga-ui/styles": "3.65.0",
         "@taiga-ui/tsconfig": "0.14.0",
