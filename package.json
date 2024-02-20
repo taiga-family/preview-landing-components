@@ -61,7 +61,7 @@
         "@tinkoff/ng-event-plugins": "3.1.0",
         "@types/minimatch": "5.1.2",
         "@types/node": "20.11.19",
-        "dompurify": "3.0.8",
+        "dompurify": "3.0.9",
         "eslint": "8.56.0",
         "nx": "18.0.4",
         "prettier": "3.2.5",
