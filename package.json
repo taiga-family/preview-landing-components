@@ -43,7 +43,7 @@
         "@nx/angular": "18.0.5",
         "@nx/node": "18.0.5",
         "@nx/workspace": "18.0.5",
-        "@schematics/angular": "17.2.1",
+        "@schematics/angular": "17.2.2",
         "@taiga-ui/addon-doc": "3.68.0",
         "@taiga-ui/addon-mobile": "3.68.0",
         "@taiga-ui/browserslist-config": "0.5.0",
