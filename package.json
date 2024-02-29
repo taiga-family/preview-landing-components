@@ -60,7 +60,7 @@
         "@tinkoff/ng-dompurify": "4.0.0",
         "@tinkoff/ng-event-plugins": "3.1.1",
         "@types/minimatch": "5.1.2",
-        "@types/node": "20.11.23",
+        "@types/node": "20.11.24",
         "dompurify": "3.0.9",
         "eslint": "8.57.0",
         "nx": "18.0.5",
