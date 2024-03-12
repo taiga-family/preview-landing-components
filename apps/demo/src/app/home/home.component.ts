@@ -1,15 +1,15 @@
 import {CommonModule} from '@angular/common';
+import type {TemplateRef} from '@angular/core';
 import {
     ChangeDetectionStrategy,
     ChangeDetectorRef,
     Component,
     inject,
     SecurityContext,
-    TemplateRef,
     ViewEncapsulation,
 } from '@angular/core';
 import {FormsModule} from '@angular/forms';
-import {TuiDay} from '@taiga-ui/cdk';
+import type {TuiDay} from '@taiga-ui/cdk';
 import {
     TuiButtonModule,
     TuiCalendarModule,
@@ -61,17 +61,17 @@ export default class HomeComponent {
     private readonly dialogs = inject(TuiDialogService);
     private readonly cd = inject(ChangeDetectorRef);
 
-    readonly labels = ['New', 'Read', 'Archived', 'Junk'];
-    tags = ['Angular', 'Open source'];
-    date: TuiDay | null = null;
-    notification = false;
-    slider = 80;
+    protected readonly labels = ['New', 'Read', 'Archived', 'Junk'];
+    protected tags = ['Angular', 'Open source'];
+    protected date: TuiDay | null = null;
+    protected notification = false;
+    protected slider = 80;
 
-    onDay(date: TuiDay): void {
+    protected onDay(date: TuiDay): void {
         this.date = date;
     }
 
-    call(content: TemplateRef<HTMLElement>): void {
+    protected call(content: TemplateRef<HTMLElement>): void {
         this.dialogs
             .open(content, {
                 appearance: 'call',
@@ -81,12 +81,12 @@ export default class HomeComponent {
             .subscribe();
     }
 
-    toggle(open: boolean): void {
+    protected toggle(open: boolean): void {
         this.notification = open;
         this.cd.detectChanges();
     }
 
-    purify(value: string): string {
+    protected purify(value: string): string {
         return this.dompurifySanitizer.sanitize(SecurityContext.HTML, value);
     }
 }
