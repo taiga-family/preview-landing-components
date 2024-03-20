@@ -8,7 +8,7 @@
     [tuiHintContent]="hint"
     [tuiTextfieldLabelOutside]="true"
     [(ngModel)]="tags"
-></tui-input-tag>
+/>
 
 <ng-template #hint>
     <span [innerHtml]="purify('Customizable for <b>any use</b> case')"></span>
@@ -31,7 +31,7 @@
             [value]="date"
             (dayClick)="onDay($event)"
             (event.prevent.silent)="(0)"
-        ></tui-calendar>
+        />
     </div>
     <div>
         <tui-checkbox-labeled
@@ -50,7 +50,7 @@
                 class="tui-space_right-3"
                 [showIcons]="true"
                 [(ngModel)]="notification"
-            ></tui-toggle>
+            />
             Push notification
         </label>
         <input
@@ -137,7 +137,7 @@
     type="Dr. Henry Walton Jones, Jr."
     (close)="toggle(false)"
 >
-    <tui-svg src="tuiIconMessageSquareLarge"></tui-svg>
+    <tui-svg src="tuiIconMessageSquareLarge" />
     I have a bad feeling about this...
     <button
         tuiButton
