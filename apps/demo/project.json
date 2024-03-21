@@ -22,8 +22,7 @@
                         "output": "assets/taiga-ui/icons"
                     }
                 ],
-                "styles": ["node_modules/@taiga-ui/core/styles/taiga-ui-theme.less", "apps/demo/src/styles.less"],
-                "scripts": [],
+                "styles": ["@taiga-ui/core/styles/taiga-ui-theme.less", "apps/demo/src/styles.less"],
                 "server": "apps/demo/src/main.server.ts",
                 "prerender": {
                     "discoverRoutes": true,
