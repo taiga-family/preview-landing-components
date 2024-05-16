@@ -29,6 +29,7 @@ import {
     TuiToggleModule,
 } from '@taiga-ui/kit';
 import {NgDompurifyModule, NgDompurifySanitizer} from '@tinkoff/ng-dompurify';
+import {TuiEditorModule, TuiEditorTool} from '@tinkoff/tui-editor';
 
 @Component({
     standalone: true,
@@ -50,6 +51,7 @@ import {NgDompurifyModule, NgDompurifySanitizer} from '@tinkoff/ng-dompurify';
         TuiLinkModule,
         TuiDropdownModule,
         NgDompurifyModule,
+        TuiEditorModule,
     ],
     templateUrl: './home.component.html',
     styleUrls: ['./home.component.less'],
@@ -61,6 +63,7 @@ export default class HomeComponent {
     private readonly dialogs = inject(TuiDialogService);
     private readonly cd = inject(ChangeDetectorRef);
 
+    protected readonly builtInTools = [TuiEditorTool.Undo, TuiEditorTool.Img];
     protected readonly labels = ['New', 'Read', 'Archived', 'Junk'];
     protected tags = ['Angular', 'Open source'];
     protected date: TuiDay | null = null;
