@@ -3,7 +3,12 @@ import {importProvidersFrom, INJECTOR} from '@angular/core';
 import {provideClientHydration} from '@angular/platform-browser';
 import {provideAnimations} from '@angular/platform-browser/animations';
 import {provideRouter} from '@angular/router';
-import {TUI_SANITIZER, TuiDialogModule, TuiRootModule} from '@taiga-ui/core';
+import {
+    TUI_SANITIZER,
+    TuiAlertModule,
+    TuiDialogModule,
+    TuiRootModule,
+} from '@taiga-ui/core';
 import {TuiPushModule} from '@taiga-ui/kit';
 import {NgDompurifySanitizer} from '@tinkoff/ng-dompurify';
 import {TUI_EDITOR_DEFAULT_EXTENSIONS, TUI_EDITOR_EXTENSIONS} from '@tinkoff/tui-editor';
@@ -19,7 +24,12 @@ export const appConfig: ApplicationConfig = {
             },
         ]),
         provideClientHydration(),
-        importProvidersFrom(TuiRootModule, TuiDialogModule, TuiPushModule),
+        importProvidersFrom(
+            TuiRootModule,
+            TuiAlertModule,
+            TuiDialogModule,
+            TuiPushModule,
+        ),
         {
             provide: TUI_EDITOR_EXTENSIONS,
             deps: [INJECTOR],
