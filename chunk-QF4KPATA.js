@@ -1,2 +1,0 @@
-import{V as s}from"./chunk-BZ65WEPX.js";var l=s.create({name:"fileLink",addCommands(){return{setFileLink:t=>({state:r,chain:n})=>{let{selection:e}=r,i=Math.abs(e.to-e.from),o='<span style="font-size: 15px"> </span>';return(i>0?n().toggleMark("link",{href:t.link},{extendEmptyMarkRange:!0}).setTextSelection(e.to).insertContent(o):n().insertContent(`<a href="${t.link}">${t.name}</a>${o}`)).setTextSelection(e.to).run()}}}});export{l as TuiFileLink};
-//# sourceMappingURL=chunk-QF4KPATA.js.map
