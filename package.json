@@ -55,7 +55,7 @@
         "@taiga-ui/styles": "3.83.0",
         "@taiga-ui/tsconfig": "0.97.0",
         "@tinkoff/ng-dompurify": "4.0.0",
-        "@tinkoff/tui-editor": "1.35.0",
+        "@tinkoff/tui-editor": "1.37.0",
         "@types/minimatch": "5.1.2",
         "@types/node": "20.14.2",
         "dompurify": "3.1.5",
