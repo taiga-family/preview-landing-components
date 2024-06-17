@@ -1,5 +1,3 @@
-import '@ng-web-apis/universal/mocks';
-
 import {dirname, join, resolve} from 'node:path';
 import {fileURLToPath} from 'node:url';
 
