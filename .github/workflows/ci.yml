@@ -10,9 +10,9 @@ jobs:
     name: Build
     runs-on: ubuntu-latest
     steps:
-      - uses: taiga-family/ci/actions/setup/checkout@v1.63.0
-      - uses: taiga-family/ci/actions/setup/variables@v1.63.0
-      - uses: taiga-family/ci/actions/setup/node@v1.63.0
+      - uses: taiga-family/ci/actions/setup/checkout@v1.65.0
+      - uses: taiga-family/ci/actions/setup/variables@v1.65.0
+      - uses: taiga-family/ci/actions/setup/node@v1.65.0
       - run: npm run lint
       - run: npm run prettier -- --check
       - run: npx nx build demo
