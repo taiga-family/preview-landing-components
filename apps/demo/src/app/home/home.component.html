@@ -96,7 +96,12 @@
     </div>
 </div>
 
-<tui-editor [tools]="builtInTools">Typing...</tui-editor>
+<tui-editor
+    [tools]="builtInTools"
+    [(ngModel)]="editor"
+>
+    Typing...
+</tui-editor>
 
 <ng-template
     #callTemplate
@@ -156,3 +161,14 @@
         Glory
     </button>
 </tui-push>
+
+<br />
+
+<tui-accordion>
+    @for (item of questions; track $index) {
+        <tui-accordion-item [open]="true">
+            {{ item.question }}
+            <ng-template tuiAccordionItemContent>{{ item.answer }}</ng-template>
+        </tui-accordion-item>
+    }
+</tui-accordion>

@@ -21,6 +21,7 @@ import {
     TuiTextfieldControllerModule,
 } from '@taiga-ui/core';
 import {
+    TuiAccordionModule,
     TuiCheckboxLabeledModule,
     TuiInputDateModule,
     TuiInputTagModule,
@@ -52,6 +53,7 @@ import {TuiEditorModule, TuiEditorTool} from '@tinkoff/tui-editor';
         TuiDropdownModule,
         NgDompurifyModule,
         TuiEditorModule,
+        TuiAccordionModule,
     ],
     templateUrl: './home.component.html',
     styleUrls: ['./home.component.less'],
@@ -69,6 +71,22 @@ export default class HomeComponent {
     protected date: TuiDay | null = null;
     protected notification = false;
     protected slider = 80;
+    protected editor = '';
+
+    protected questions = [
+        {
+            question: 'Accordion 1',
+            answer: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortis eget.',
+        },
+        {
+            question: 'Accordion 2',
+            answer: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortis eget.',
+        },
+        {
+            question: 'Accordion 3',
+            answer: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortis eget.',
+        },
+    ];
 
     protected onDay(date: TuiDay): void {
         this.date = date;

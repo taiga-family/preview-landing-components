@@ -15,6 +15,7 @@ import {TUI_EDITOR_DEFAULT_EXTENSIONS, TUI_EDITOR_EXTENSIONS} from '@tinkoff/tui
 
 export const appConfig: ApplicationConfig = {
     providers: [
+        provideClientHydration(),
         provideAnimations(),
         provideRouter([
             {
@@ -23,7 +24,6 @@ export const appConfig: ApplicationConfig = {
                 loadComponent: async () => import('./home/home.component'),
             },
         ]),
-        provideClientHydration(),
         importProvidersFrom(
             TuiRootModule,
             TuiAlertModule,
