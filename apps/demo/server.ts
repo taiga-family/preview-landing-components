@@ -59,8 +59,8 @@ export function app(): express.Express {
                     provideUserAgent(req),
                 ],
             })
-            .then(html => res.send(html))
-            .catch(err => next(err));
+            .then((html) => res.send(html))
+            .catch((err) => next(err));
     });
 
     return server;

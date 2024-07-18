@@ -6,7 +6,7 @@ import {TuiEditorModule} from '@tinkoff/tui-editor';
 @Component({
     standalone: true,
     selector: 'app',
-    imports: [TuiRootModule, RouterOutlet, TuiEditorModule],
+    imports: [RouterOutlet, TuiEditorModule, TuiRootModule],
     templateUrl: './app.component.html',
     encapsulation: ViewEncapsulation.None,
     changeDetection: ChangeDetectionStrategy.OnPush,
