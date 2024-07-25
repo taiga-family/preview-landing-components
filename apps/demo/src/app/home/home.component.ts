@@ -8,29 +8,36 @@ import {
     SecurityContext,
     ViewEncapsulation,
 } from '@angular/core';
-import {FormsModule} from '@angular/forms';
+import {FormControl, FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {DomSanitizer} from '@angular/platform-browser';
 import type {TuiDay} from '@taiga-ui/cdk';
 import {
-    TuiButtonModule,
-    TuiCalendarModule,
+    TuiButton,
+    TuiCalendar,
+    TuiDataList,
     TuiDialogService,
-    TuiDropdownModule,
-    TuiHintModule,
-    TuiLinkModule,
-    TuiSvgModule,
-    TuiTextfieldControllerModule,
+    TuiDropdown,
+    TuiHint,
+    TuiLabel,
+    TuiLink,
 } from '@taiga-ui/core';
+import {TuiEditor, TuiEditorSocket, TuiEditorTool} from '@taiga-ui/editor';
 import {
-    TuiAccordionModule,
-    TuiCheckboxLabeledModule,
+    TuiAccordion,
+    TuiCheckbox,
+    TuiDataListWrapper,
+    TuiPush,
+    TuiPushDirective,
+    TuiSlider,
+    TuiSwitch,
+} from '@taiga-ui/kit';
+import {
     TuiInputDateModule,
     TuiInputTagModule,
-    TuiPushModule,
-    TuiSliderModule,
-    TuiToggleModule,
-} from '@taiga-ui/kit';
-import {NgDompurifyModule, NgDompurifySanitizer} from '@tinkoff/ng-dompurify';
-import {TuiEditorModule, TuiEditorTool} from '@tinkoff/tui-editor';
+    TuiSelectModule,
+    TuiSvgComponent,
+    TuiTextfieldControllerModule,
+} from '@taiga-ui/legacy';
 
 @Component({
     standalone: true,
@@ -38,22 +45,31 @@ import {TuiEditorModule, TuiEditorTool} from '@tinkoff/tui-editor';
     imports: [
         CommonModule,
         FormsModule,
-        NgDompurifyModule,
-        TuiAccordionModule,
-        TuiButtonModule,
-        TuiCalendarModule,
-        TuiCheckboxLabeledModule,
-        TuiDropdownModule,
-        TuiEditorModule,
-        TuiHintModule,
+        ReactiveFormsModule,
+        ReactiveFormsModule,
+        TuiAccordion,
+        TuiButton,
+        TuiCalendar,
+        TuiCheckbox,
+        TuiDataList,
+        TuiDataListWrapper,
+        TuiDropdown,
+        TuiEditor,
+        TuiEditorSocket,
+        TuiHint,
         TuiInputDateModule,
         TuiInputTagModule,
-        TuiLinkModule,
-        TuiPushModule,
-        TuiSliderModule,
-        TuiSvgModule,
+        TuiLabel,
+        TuiLink,
+        TuiPush,
+        TuiPushDirective,
+        TuiSelectModule,
+        TuiSelectModule,
+        TuiSlider,
+        TuiSvgComponent,
+        TuiSwitch,
         TuiTextfieldControllerModule,
-        TuiToggleModule,
+        TuiTextfieldControllerModule,
     ],
     templateUrl: './home.component.html',
     styleUrls: ['./home.component.less'],
@@ -61,7 +77,7 @@ import {TuiEditorModule, TuiEditorTool} from '@tinkoff/tui-editor';
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export default class HomeComponent {
-    private readonly dompurifySanitizer = inject(NgDompurifySanitizer);
+    private readonly dompurifySanitizer = inject(DomSanitizer);
     private readonly dialogs = inject(TuiDialogService);
     private readonly cd = inject(ChangeDetectorRef);
 
@@ -72,6 +88,17 @@ export default class HomeComponent {
     protected notification = false;
     protected slider = 80;
     protected editor = '';
+
+    protected items = [
+        'Luke Skywalker',
+        'Leia Organa Solo',
+        'Darth Vader',
+        'Han Solo',
+        'Obi-Wan Kenobi',
+        'Yoda',
+    ];
+
+    protected testValue = new FormControl();
 
     protected questions = [
         {
@@ -107,7 +134,7 @@ export default class HomeComponent {
         this.cd.detectChanges();
     }
 
-    protected purify(value: string): string {
+    protected purify(value: string): string | null {
         return this.dompurifySanitizer.sanitize(SecurityContext.HTML, value);
     }
 }

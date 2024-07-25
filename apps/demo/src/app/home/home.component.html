@@ -34,19 +34,26 @@
         />
     </div>
     <div>
-        <tui-checkbox-labeled
+        <label
             *ngFor="let label of labels"
-            size="l"
+            tuiLabel
             class="tui-space_bottom-4"
-            [ngModel]="label === labels[1]"
         >
+            <input
+                size="m"
+                tuiCheckbox
+                type="checkbox"
+                [ngModel]="label === labels[1]"
+            />
             {{ label }}
-        </tui-checkbox-labeled>
+        </label>
     </div>
     <div class="controls">
         <label>
-            <tui-toggle
-                size="l"
+            <input
+                size="m"
+                tuiSwitch
+                type="checkbox"
                 class="tui-space_right-3"
                 [showIcons]="true"
                 [(ngModel)]="notification"
@@ -64,9 +71,8 @@
         />
         <div class="icons">
             <button
-                appearance=""
-                icon="tuiIconVolumeXLarge"
-                shape="rounded"
+                appearance="secondary"
+                iconStart="@tui.volume-x"
                 title="Mute speaker"
                 tuiIconButton
                 type="button"
@@ -74,18 +80,16 @@
                 (click)="slider = 0"
             ></button>
             <button
-                appearance=""
-                icon="tuiIconMicOffLarge"
-                shape="rounded"
+                appearance="secondary"
+                iconStart="@tui.mic-off"
                 title="Mute microphone"
                 tuiIconButton
                 type="button"
                 class="button"
             ></button>
             <button
-                appearance=""
-                icon="tuiIconPhoneForwardedLarge"
-                shape="rounded"
+                appearance="secondary"
+                iconStart="@tui.phone-forwarded"
                 title="Forward call"
                 tuiIconButton
                 type="button"
@@ -120,7 +124,7 @@
         <div class="buttons">
             <button
                 appearance="custom"
-                iconRight="tuiIconPhone"
+                iconEnd="@tui.phone"
                 size="m"
                 tuiIconButton
                 class="missed"
@@ -128,7 +132,7 @@
             ></button>
             <button
                 appearance="custom"
-                iconRight="tuiIconPhone"
+                iconEnd="@tui.phone"
                 size="m"
                 tuiIconButton
                 class="income"
@@ -144,7 +148,7 @@
     type="Dr. Henry Walton Jones, Jr."
     (close)="toggle(false)"
 >
-    <tui-svg src="tuiIconMessageSquareLarge" />
+    <tui-svg src="@tui.message-square" />
     I have a bad feeling about this...
     <button
         tuiButton
@@ -161,6 +165,21 @@
         Glory
     </button>
 </tui-push>
+
+<br />
+<br />
+
+<tui-select [formControl]="testValue">
+    Character
+    <input
+        placeholder="Choose your hero"
+        tuiTextfieldLegacy
+    />
+    <tui-data-list-wrapper
+        *tuiDataList
+        [items]="items"
+    />
+</tui-select>
 
 <br />
 

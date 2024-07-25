@@ -3,18 +3,14 @@ import {importProvidersFrom, INJECTOR} from '@angular/core';
 import {provideClientHydration} from '@angular/platform-browser';
 import {provideAnimations} from '@angular/platform-browser/animations';
 import {provideRouter} from '@angular/router';
-import {
-    TUI_SANITIZER,
-    TuiAlertModule,
-    TuiDialogModule,
-    TuiRootModule,
-} from '@taiga-ui/core';
-import {TuiPushModule} from '@taiga-ui/kit';
-import {NgDompurifySanitizer} from '@tinkoff/ng-dompurify';
-import {TUI_EDITOR_DEFAULT_EXTENSIONS, TUI_EDITOR_EXTENSIONS} from '@tinkoff/tui-editor';
+import {TuiAlert, TuiDialog} from '@taiga-ui/core';
+import {TUI_EDITOR_DEFAULT_EXTENSIONS, TUI_EDITOR_EXTENSIONS} from '@taiga-ui/editor';
+import {NG_EVENT_PLUGINS} from '@taiga-ui/event-plugins';
+import {TuiPushDirective} from '@taiga-ui/kit';
 
 export const appConfig: ApplicationConfig = {
     providers: [
+        NG_EVENT_PLUGINS,
         provideClientHydration(),
         provideAnimations(),
         provideRouter([
@@ -24,26 +20,16 @@ export const appConfig: ApplicationConfig = {
                 loadComponent: async () => import('./home/home.component'),
             },
         ]),
-        importProvidersFrom(
-            TuiRootModule,
-            TuiAlertModule,
-            TuiDialogModule,
-            TuiPushModule,
-        ),
+        importProvidersFrom(TuiAlert, TuiDialog, TuiPushDirective),
         {
             provide: TUI_EDITOR_EXTENSIONS,
             deps: [INJECTOR],
             useFactory: (injector: Injector) => [
                 ...TUI_EDITOR_DEFAULT_EXTENSIONS,
-                import('@tinkoff/tui-editor/extensions/image-editor').then(
-                    ({tuiCreateImageEditorExtension}) =>
-                        tuiCreateImageEditorExtension({injector}),
+                import('@taiga-ui/editor').then(({tuiCreateImageEditorExtension}) =>
+                    tuiCreateImageEditorExtension({injector}),
                 ),
             ],
-        },
-        {
-            provide: TUI_SANITIZER,
-            useClass: NgDompurifySanitizer,
         },
     ],
 };

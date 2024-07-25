@@ -21,9 +21,8 @@
 }
 
 .calendar {
-    .shadow(2);
     border-radius: var(--tui-radius-m);
-    border: 0.0625rem solid var(--tui-base-03);
+    border: 0.0625rem solid var(--tui-background-neutral-1-hover);
     margin-top: 0.25rem;
     width: 18rem;
     box-sizing: border-box;
@@ -40,25 +39,25 @@
     justify-content: space-between;
 }
 
-.button[data-size][data-shape],
-.error[data-size][data-shape] {
+.button,
+.error {
     .transition(~'color, background');
-    background: var(--tui-base-02);
-    color: var(--tui-primary);
+    background: var(--tui-background-base-alt);
+    color: var(--tui-background-accent-1);
 
     &:hover,
     &:active {
-        background: var(--tui-base-03);
-        color: var(--tui-primary-hover);
+        background: var(--tui-background-neutral-1-hover);
+        color: var(--tui-background-accent-1-hover);
     }
 }
 
-.error[data-size][data-shape] {
-    color: var(--tui-negative);
+.error {
+    color: var(--tui-text-negative);
 
     &:hover,
     &:active {
-        color: var(--tui-negative-hover);
+        color: var(--tui-text-negative-hover);
     }
 }
 
@@ -120,7 +119,7 @@ tui-dialog[data-appearance='call'][data-size] {
         img {
             width: 2.25rem;
             border-radius: 0.625rem;
-            border: 0.0625rem solid var(--tui-base-05);
+            border: 0.0625rem solid var(--tui-border-hover);
         }
     }
 
@@ -130,12 +129,12 @@ tui-dialog[data-appearance='call'][data-size] {
         color: #fff;
     }
 
-    .missed [data-appearance='custom'] {
+    .missed {
         background: rgb(210, 58, 71);
         transform: rotate(135deg);
     }
 
-    .income [data-appearance='custom'] {
+    .income {
         background: rgb(39, 187, 100);
     }
 
