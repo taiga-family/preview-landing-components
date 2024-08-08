@@ -60,7 +60,7 @@ export function app(): express.Express {
                 ],
             })
             .then((html) => res.send(html))
-            .catch((err) => next(err));
+            .catch((err: unknown) => next(err));
     });
 
     return server;
