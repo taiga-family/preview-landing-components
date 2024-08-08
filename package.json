@@ -67,6 +67,6 @@
         "zone.js": "0.14.10"
     },
     "overrides": {
-        "prosemirror-model": "1.9.1"
+        "prosemirror-model": "1.22.3"
     }
 }
