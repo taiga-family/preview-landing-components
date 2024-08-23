@@ -36,7 +36,7 @@
         "@angular/platform-server": "18.2.1",
         "@angular/router": "18.2.1",
         "@angular/ssr": "18.2.1",
-        "@ng-web-apis/universal": "3.2.3",
+        "@ng-web-apis/universal": "4.2.1",
         "@nx/angular": "19.6.2",
         "@nx/node": "19.6.2",
         "@nx/workspace": "19.6.2",
