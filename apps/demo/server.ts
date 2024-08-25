@@ -9,7 +9,7 @@ import express from 'express';
 import bootstrap from './src/main.server';
 
 function run(): void {
-    const port = process.env['PORT'] || 4000;
+    const port = process.env['PORT'] ?? 4000;
 
     // Start up the Node server
     const server = app();
