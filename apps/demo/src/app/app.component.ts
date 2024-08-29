@@ -1,12 +1,12 @@
+import { TuiEditor, TuiEditorSocket } from "@taiga-ui/editor";
+import { TuiRoot } from "@taiga-ui/core";
 import {ChangeDetectionStrategy, Component, ViewEncapsulation} from '@angular/core';
 import {RouterOutlet} from '@angular/router';
-import {TuiRootModule} from '@taiga-ui/core';
-import {TuiEditorModule} from '@tinkoff/tui-editor';
 
 @Component({
     standalone: true,
     selector: 'app',
-    imports: [RouterOutlet, TuiEditorModule, TuiRootModule],
+    imports: [RouterOutlet, TuiEditor, TuiEditorSocket, TuiRoot],
     templateUrl: './app.component.html',
     encapsulation: ViewEncapsulation.None,
     changeDetection: ChangeDetectionStrategy.OnPush,
