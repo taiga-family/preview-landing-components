@@ -9,6 +9,15 @@
         "lint": "eslint .",
         "prettier": "prettier !package-lock.json . --ignore-path .gitignore"
     },
+    "lint-staged": {
+        "*.less": [
+            "stylelint --fix"
+        ],
+        "*.{js,ts,html,svg,yml,md,less,json}": [
+            "prettier --write",
+            "eslint --fix"
+        ]
+    },
     "browserslist": [
         "extends @taiga-ui/browserslist-config"
     ],
@@ -59,6 +68,7 @@
         "@types/minimatch": "5.1.2",
         "@types/node": "22.5.0",
         "dompurify": "3.1.6",
+        "lint-staged": "15.2.9",
         "nx": "19.6.2",
         "rxjs": "7.8.1",
         "ts-node": "10.9.2",
