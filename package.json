@@ -7,6 +7,7 @@
         "start": "nx serve demo",
         "build": "nx build demo",
         "lint": "eslint .",
+        "stylelint": "stylelint '**/*.{less,css}' --config package.json",
         "prettier": "prettier !package-lock.json . --ignore-path .gitignore"
     },
     "lint-staged": {
@@ -25,6 +26,11 @@
     "eslintConfig": {
         "extends": [
             "plugin:@taiga-ui/experience/all"
+        ]
+    },
+    "stylelint": {
+        "extends": [
+            "@taiga-ui/stylelint-config"
         ]
     },
     "devDependencies": {

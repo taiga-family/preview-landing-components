@@ -16,18 +16,19 @@
 }
 
 .date {
-    width: 18rem;
+    inline-size: 18rem;
     margin-right: 2.8125rem;
 }
 
 .calendar {
     .shadow(2);
+
     border-radius: var(--tui-radius-m);
     border: 0.0625rem solid var(--tui-base-03);
     margin-top: 0.25rem;
-    width: 18rem;
+    inline-size: 18rem;
     box-sizing: border-box;
-    height: auto;
+    block-size: auto;
 }
 
 .controls {
@@ -43,6 +44,7 @@
 .button[data-size][data-shape],
 .error[data-size][data-shape] {
     .transition(~'color, background');
+
     background: var(--tui-base-02);
     color: var(--tui-primary);
 
@@ -64,7 +66,7 @@
 
 tui-dialog[data-appearance='call'][data-size] {
     border-radius: 0.25rem;
-    width: 25rem;
+    inline-size: 25rem;
     padding: 0;
     border: none;
     margin: 1.25rem auto;
@@ -76,23 +78,23 @@ tui-dialog[data-appearance='call'][data-size] {
         --border-width: 0.1875rem;
 
         &::after {
-            position: absolute;
             content: '';
+            position: absolute;
             top: calc(-1 * var(--border-width));
             left: calc(-1 * var(--border-width));
             z-index: -1;
-            width: calc(100% + var(--border-width) * 2);
-            height: calc(100% + var(--border-width) * 2);
+            inline-size: calc(100% + var(--border-width) * 2);
+            block-size: calc(100% + var(--border-width) * 2);
             background: linear-gradient(
                 60deg,
-                hsl(224, 85%, 66%),
-                hsl(269, 85%, 66%),
-                hsl(314, 85%, 66%),
-                hsl(359, 85%, 66%),
-                hsl(44, 85%, 66%),
-                hsl(89, 85%, 66%),
-                hsl(134, 85%, 66%),
-                hsl(179, 85%, 66%)
+                hsl(224 85% 66%),
+                hsl(269 85% 66%),
+                hsl(314 85% 66%),
+                hsl(359 85% 66%),
+                hsl(44 85% 66%),
+                hsl(89 85% 66%),
+                hsl(134 85% 66%),
+                hsl(179 85% 66%)
             );
             background-size: 300% 300%;
             background-position: 0 50%;
@@ -118,7 +120,7 @@ tui-dialog[data-appearance='call'][data-size] {
         gap: 0.625rem;
 
         img {
-            width: 2.25rem;
+            inline-size: 2.25rem;
             border-radius: 0.625rem;
             border: 0.0625rem solid var(--tui-base-05);
         }
@@ -131,12 +133,12 @@ tui-dialog[data-appearance='call'][data-size] {
     }
 
     .missed [data-appearance='custom'] {
-        background: rgb(210, 58, 71);
+        background: rgb(210 58 71);
         transform: rotate(135deg);
     }
 
     .income [data-appearance='custom'] {
-        background: rgb(39, 187, 100);
+        background: rgb(39 187 100);
     }
 
     .buttons {
