@@ -70,7 +70,7 @@
         "@taiga-ui/styles": "3.93.0",
         "@taiga-ui/tsconfig": "0.156.1",
         "@tinkoff/ng-dompurify": "4.0.0",
-        "@tinkoff/tui-editor": "1.63.0",
+        "@tinkoff/tui-editor": "1.64.0",
         "@types/minimatch": "5.1.2",
         "@types/node": "22.5.4",
         "dompurify": "3.1.6",
