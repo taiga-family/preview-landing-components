@@ -3,15 +3,12 @@ import {importProvidersFrom, INJECTOR} from '@angular/core';
 import {provideClientHydration} from '@angular/platform-browser';
 import {provideAnimations} from '@angular/platform-browser/animations';
 import {provideRouter} from '@angular/router';
-import {
-    TUI_SANITIZER,
-    TuiAlertModule,
-    TuiDialogModule,
-    TuiRootModule,
-} from '@taiga-ui/core';
-import {TuiPushModule} from '@taiga-ui/kit';
-import {NgDompurifySanitizer} from '@tinkoff/ng-dompurify';
-import {TUI_EDITOR_DEFAULT_EXTENSIONS, TUI_EDITOR_EXTENSIONS} from '@tinkoff/tui-editor';
+import {TuiAlert, TuiDialog} from '@taiga-ui/core';
+import {NgDompurifySanitizer} from '@taiga-ui/dompurify';
+import {TUI_EDITOR_DEFAULT_EXTENSIONS, TUI_EDITOR_EXTENSIONS} from '@taiga-ui/editor';
+import {NG_EVENT_PLUGINS} from '@taiga-ui/event-plugins';
+import {TuiPush} from '@taiga-ui/kit';
+import {TUI_SANITIZER} from '@taiga-ui/legacy';
 
 export const appConfig: ApplicationConfig = {
     providers: [
@@ -24,20 +21,14 @@ export const appConfig: ApplicationConfig = {
                 loadComponent: async () => import('./home/home.component'),
             },
         ]),
-        importProvidersFrom(
-            TuiRootModule,
-            TuiAlertModule,
-            TuiDialogModule,
-            TuiPushModule,
-        ),
+        importProvidersFrom(TuiAlert, TuiDialog, TuiPush),
         {
             provide: TUI_EDITOR_EXTENSIONS,
             deps: [INJECTOR],
             useFactory: (injector: Injector) => [
                 ...TUI_EDITOR_DEFAULT_EXTENSIONS,
-                import('@tinkoff/tui-editor/extensions/image-editor').then(
-                    ({tuiCreateImageEditorExtension}) =>
-                        tuiCreateImageEditorExtension({injector}),
+                import('@taiga-ui/editor').then(({tuiCreateImageEditorExtension}) =>
+                    tuiCreateImageEditorExtension({injector}),
                 ),
             ],
         },
@@ -45,5 +36,6 @@ export const appConfig: ApplicationConfig = {
             provide: TUI_SANITIZER,
             useClass: NgDompurifySanitizer,
         },
+        NG_EVENT_PLUGINS,
     ],
 };
