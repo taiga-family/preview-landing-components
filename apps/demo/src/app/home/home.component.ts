@@ -11,26 +11,23 @@ import {
 import {FormsModule} from '@angular/forms';
 import type {TuiDay} from '@taiga-ui/cdk';
 import {
-    TuiButtonModule,
-    TuiCalendarModule,
+    TuiButton,
+    TuiCalendar,
     TuiDialogService,
-    TuiDropdownModule,
-    TuiHintModule,
-    TuiLinkModule,
-    TuiSvgModule,
-    TuiTextfieldControllerModule,
+    TuiDropdown,
+    TuiHint,
+    TuiIcon,
+    TuiLabel,
+    TuiLink,
 } from '@taiga-ui/core';
+import {NgDompurifyPipe, NgDompurifySanitizer} from '@taiga-ui/dompurify';
+import {TuiEditor, TuiEditorSocket, TuiEditorTool} from '@taiga-ui/editor';
+import {TuiAccordion, TuiCheckbox, TuiPush, TuiSlider, TuiSwitch} from '@taiga-ui/kit';
 import {
-    TuiAccordionModule,
-    TuiCheckboxLabeledModule,
     TuiInputDateModule,
     TuiInputTagModule,
-    TuiPushModule,
-    TuiSliderModule,
-    TuiToggleModule,
-} from '@taiga-ui/kit';
-import {NgDompurifyModule, NgDompurifySanitizer} from '@tinkoff/ng-dompurify';
-import {TuiEditorModule, TuiEditorTool} from '@tinkoff/tui-editor';
+    TuiTextfieldControllerModule,
+} from '@taiga-ui/legacy';
 
 @Component({
     standalone: true,
@@ -38,22 +35,24 @@ import {TuiEditorModule, TuiEditorTool} from '@tinkoff/tui-editor';
     imports: [
         CommonModule,
         FormsModule,
-        NgDompurifyModule,
-        TuiAccordionModule,
-        TuiButtonModule,
-        TuiCalendarModule,
-        TuiCheckboxLabeledModule,
-        TuiDropdownModule,
-        TuiEditorModule,
-        TuiHintModule,
+        NgDompurifyPipe,
+        TuiAccordion,
+        TuiButton,
+        TuiCalendar,
+        TuiCheckbox,
+        TuiDropdown,
+        TuiEditor,
+        TuiEditorSocket,
+        TuiHint,
+        TuiIcon,
         TuiInputDateModule,
         TuiInputTagModule,
-        TuiLinkModule,
-        TuiPushModule,
-        TuiSliderModule,
-        TuiSvgModule,
+        TuiLabel,
+        TuiLink,
+        TuiPush,
+        TuiSlider,
+        TuiSwitch,
         TuiTextfieldControllerModule,
-        TuiToggleModule,
     ],
     templateUrl: './home.component.html',
     styleUrls: ['./home.component.less'],
