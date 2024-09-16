@@ -1,3 +1,6 @@
+import { TuiTextfieldControllerModule, TuiInputDateModule, TuiInputTagModule } from "@taiga-ui/legacy";
+import { NgDompurifyPipe } from "@taiga-ui/dompurify";
+import { TuiEditor, TuiEditorSocket } from "@taiga-ui/editor";
 import {CommonModule} from '@angular/common';
 import type {TemplateRef} from '@angular/core';
 import {
@@ -10,27 +13,10 @@ import {
 } from '@angular/core';
 import {FormsModule} from '@angular/forms';
 import type {TuiDay} from '@taiga-ui/cdk';
-import {
-    TuiButtonModule,
-    TuiCalendarModule,
-    TuiDialogService,
-    TuiDropdownModule,
-    TuiHintModule,
-    TuiLinkModule,
-    TuiSvgModule,
-    TuiTextfieldControllerModule,
-} from '@taiga-ui/core';
-import {
-    TuiAccordionModule,
-    TuiCheckboxLabeledModule,
-    TuiInputDateModule,
-    TuiInputTagModule,
-    TuiPushModule,
-    TuiSliderModule,
-    TuiToggleModule,
-} from '@taiga-ui/kit';
-import {NgDompurifyModule, NgDompurifySanitizer} from '@tinkoff/ng-dompurify';
-import {TuiEditorModule, TuiEditorTool} from '@tinkoff/tui-editor';
+import { TuiDialogService, TuiCalendar, TuiLabel, TuiDropdown, TuiIcon, TuiLink, TuiButton, TuiHint } from '@taiga-ui/core';
+import { TuiAccordion, TuiPush, TuiSlider, TuiSwitch, TuiCheckbox } from '@taiga-ui/kit';
+import {NgDompurifySanitizer} from '@taiga-ui/dompurify';
+import {TuiEditorTool} from '@taiga-ui/editor';
 
 @Component({
     standalone: true,
@@ -38,23 +24,22 @@ import {TuiEditorModule, TuiEditorTool} from '@tinkoff/tui-editor';
     imports: [
         CommonModule,
         FormsModule,
-        NgDompurifyModule,
-        TuiAccordionModule,
-        TuiButtonModule,
-        TuiCalendarModule,
-        TuiCheckboxLabeledModule,
-        TuiDropdownModule,
-        TuiEditorModule,
-        TuiHintModule,
+        NgDompurifyPipe,
+        TuiAccordion,
+        TuiButton,
+        TuiCalendar,
+        TuiLabel,
+        TuiDropdown,
+        TuiEditor, TuiEditorSocket,
+        TuiHint,
         TuiInputDateModule,
         TuiInputTagModule,
-        TuiLinkModule,
-        TuiPushModule,
-        TuiSliderModule,
-        TuiSvgModule,
+        TuiLink,
+        TuiPush,
+        TuiSlider,
+        TuiIcon,
         TuiTextfieldControllerModule,
-        TuiToggleModule,
-    ],
+        TuiSwitch, TuiCheckbox],
     templateUrl: './home.component.html',
     styleUrls: ['./home.component.less'],
     encapsulation: ViewEncapsulation.None,

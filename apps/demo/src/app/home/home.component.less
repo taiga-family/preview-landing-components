@@ -21,10 +21,10 @@
 }
 
 .calendar {
-    .shadow(2);
+    box-shadow: var(--tui-shadow-medium);
 
     border-radius: var(--tui-radius-m);
-    border: 0.0625rem solid var(--tui-base-03);
+    border: 0.0625rem solid var(--tui-background-neutral-1-hover);
     margin-top: 0.25rem;
     inline-size: 18rem;
     box-sizing: border-box;
@@ -45,22 +45,22 @@
 .error[data-size][data-shape] {
     .transition(~'color, background');
 
-    background: var(--tui-base-02);
-    color: var(--tui-primary);
+    background: var(--tui-background-base-alt);
+    color: var(--tui-background-accent-1);
 
     &:hover,
     &:active {
-        background: var(--tui-base-03);
-        color: var(--tui-primary-hover);
+        background: var(--tui-background-neutral-1-hover);
+        color: var(--tui-background-accent-1-hover);
     }
 }
 
 .error[data-size][data-shape] {
-    color: var(--tui-negative);
+    color: var(--tui-text-negative);
 
     &:hover,
     &:active {
-        color: var(--tui-negative-hover);
+        color: var(--tui-text-negative-hover);
     }
 }
 
@@ -122,7 +122,7 @@ tui-dialog[data-appearance='call'][data-size] {
         img {
             inline-size: 2.25rem;
             border-radius: 0.625rem;
-            border: 0.0625rem solid var(--tui-base-05);
+            border: 0.0625rem solid var(--tui-border-hover);
         }
     }
 

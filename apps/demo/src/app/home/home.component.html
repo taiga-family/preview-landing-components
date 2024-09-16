@@ -35,19 +35,21 @@
     </div>
     <div>
         @for (label of labels; track $index) {
-            <tui-checkbox-labeled
-                size="l"
+           <label tuiLabel> <input tuiCheckbox type="checkbox"
+                size="m"
                 class="tui-space_bottom-4"
                 [ngModel]="label === labels[1]"
             >
                 {{ label }}
-            </tui-checkbox-labeled>
+            </label>
         }
     </div>
     <div class="controls">
         <label>
-            <tui-toggle
-                size="l"
+            <input
+                tuiSwitch
+                type="checkbox"
+                size="m"
                 class="tui-space_right-3"
                 [showIcons]="true"
                 [(ngModel)]="notification"
@@ -66,8 +68,8 @@
         <div class="icons">
             <button
                 appearance=""
-                icon="tuiIconVolumeXLarge"
-                shape="rounded"
+                iconStart="@tui.volume-x"
+                [style.border-radius.%]="100"
                 title="Mute speaker"
                 tuiIconButton
                 type="button"
@@ -76,8 +78,8 @@
             ></button>
             <button
                 appearance=""
-                icon="tuiIconMicOffLarge"
-                shape="rounded"
+                iconStart="@tui.mic-off"
+                [style.border-radius.%]="100"
                 title="Mute microphone"
                 tuiIconButton
                 type="button"
@@ -85,8 +87,8 @@
             ></button>
             <button
                 appearance=""
-                icon="tuiIconPhoneForwardedLarge"
-                shape="rounded"
+                iconStart="@tui.phone-forwarded"
+                [style.border-radius.%]="100"
                 title="Forward call"
                 tuiIconButton
                 type="button"
@@ -121,7 +123,7 @@
         <div class="buttons">
             <button
                 appearance="custom"
-                iconRight="tuiIconPhone"
+                iconEnd="@tui.phone"
                 size="m"
                 tuiIconButton
                 type="button"
@@ -130,7 +132,7 @@
             ></button>
             <button
                 appearance="custom"
-                iconRight="tuiIconPhone"
+                iconEnd="@tui.phone"
                 size="m"
                 tuiIconButton
                 type="button"
@@ -147,7 +149,7 @@
     type="Dr. Henry Walton Jones, Jr."
     (close)="toggle(false)"
 >
-    <tui-svg src="tuiIconMessageSquareLarge" />
+    <tui-icon  icon="@tui.message-square" />
     I have a bad feeling about this...
     <button
         tuiButton
