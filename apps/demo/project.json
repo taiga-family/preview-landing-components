@@ -1,61 +1,66 @@
 {
-    "name": "demo",
-    "$schema": "../../node_modules/nx/schemas/project-schema.json",
-    "projectType": "application",
-    "sourceRoot": "apps/demo/src",
-    "targets": {
-        "build": {
-            "executor": "@angular-devkit/build-angular:application",
-            "options": {
-                "outputPath": "dist/demo",
-                "index": "apps/demo/src/index.html",
-                "browser": "apps/demo/src/main.ts",
-                "polyfills": ["zone.js"],
-                "tsConfig": "apps/demo/tsconfig.app.json",
-                "baseHref": "./",
-                "assets": [
-                    "apps/demo/src/favicon.ico",
-                    "apps/demo/src/assets",
-                    {
-                        "glob": "**/*",
-                        "input": "node_modules/@taiga-ui/icons/src",
-                        "output": "assets/taiga-ui/icons"
-                    }
-                ],
-                "styles": ["@taiga-ui/core/styles/taiga-ui-theme.less", "apps/demo/src/styles.less"],
-                "server": "apps/demo/src/main.server.ts",
-                "prerender": {
-                    "discoverRoutes": true,
-                    "routesFile": "apps/demo/src/routes.txt"
-                },
-                "ssr": {
-                    "entry": "apps/demo/server.ts"
-                }
-            },
-            "configurations": {
-                "production": {
-                    "outputHashing": "all",
-                    "sourceMap": true
-                },
-                "development": {
-                    "optimization": false,
-                    "extractLicenses": false,
-                    "sourceMap": true
-                }
-            },
-            "defaultConfiguration": "production"
+  "name": "demo",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "sourceRoot": "apps/demo/src",
+  "targets": {
+    "build": {
+      "executor": "@angular-devkit/build-angular:application",
+      "options": {
+        "outputPath": "dist/demo",
+        "index": "apps/demo/src/index.html",
+        "browser": "apps/demo/src/main.ts",
+        "polyfills": [
+          "zone.js"
+        ],
+        "tsConfig": "apps/demo/tsconfig.app.json",
+        "baseHref": "./",
+        "assets": [
+          "apps/demo/src/favicon.ico",
+          "apps/demo/src/assets",
+          {
+            "glob": "**/*",
+            "input": "node_modules/@taiga-ui/icons/src",
+            "output": "assets/taiga-ui/icons"
+          }
+        ],
+        "styles": [
+          "@taiga-ui/core/styles/taiga-ui-theme.less",
+          "apps/demo/src/styles.less"
+        ],
+        "server": "apps/demo/src/main.server.ts",
+        "prerender": {
+          "discoverRoutes": true,
+          "routesFile": "apps/demo/src/routes.txt"
         },
-        "serve": {
-            "executor": "@angular-devkit/build-angular:dev-server",
-            "configurations": {
-                "production": {
-                    "buildTarget": "demo:build:production"
-                },
-                "development": {
-                    "buildTarget": "demo:build:development"
-                }
-            },
-            "defaultConfiguration": "development"
+        "ssr": {
+          "entry": "apps/demo/server.ts"
         }
+      },
+      "configurations": {
+        "production": {
+          "outputHashing": "all",
+          "sourceMap": true
+        },
+        "development": {
+          "optimization": false,
+          "extractLicenses": false,
+          "sourceMap": true
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "executor": "@angular-devkit/build-angular:dev-server",
+      "configurations": {
+        "production": {
+          "buildTarget": "demo:build:production"
+        },
+        "development": {
+          "buildTarget": "demo:build:development"
+        }
+      },
+      "defaultConfiguration": "development"
     }
+  }
 }

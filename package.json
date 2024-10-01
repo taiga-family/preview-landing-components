@@ -1,89 +1,89 @@
 {
-    "name": "preview-landing-components",
-    "private": true,
-    "license": "Apache-2.0",
-    "scripts": {
-        "nx": "nx",
-        "start": "nx serve demo",
-        "build": "nx build demo",
-        "lint": "eslint .",
-        "stylelint": "stylelint '**/*.{less,css}' --config package.json",
-        "prettier": "prettier !package-lock.json . --ignore-path .gitignore"
-    },
-    "lint-staged": {
-        "*.less": [
-            "stylelint --fix"
-        ],
-        "*.{js,ts,html,svg,yml,md,less,json}": [
-            "prettier --write",
-            "eslint --fix"
-        ]
-    },
-    "browserslist": [
-        "extends @taiga-ui/browserslist-config"
+  "name": "preview-landing-components",
+  "private": true,
+  "license": "Apache-2.0",
+  "scripts": {
+    "nx": "nx",
+    "start": "nx serve demo",
+    "build": "nx build demo",
+    "lint": "eslint .",
+    "stylelint": "stylelint '**/*.{less,css}' --config package.json",
+    "prettier": "prettier !package-lock.json . --ignore-path .gitignore"
+  },
+  "lint-staged": {
+    "*.less": [
+      "stylelint --fix"
     ],
-    "prettier": "@taiga-ui/prettier-config",
-    "eslintConfig": {
-        "extends": [
-            "plugin:@taiga-ui/experience/all"
-        ]
-    },
-    "stylelint": {
-        "extends": [
-            "@taiga-ui/stylelint-config"
-        ]
-    },
-    "devDependencies": {
-        "@angular-devkit/build-angular": "18.2.6",
-        "@angular-devkit/core": "18.2.6",
-        "@angular-devkit/schematics": "18.2.6",
-        "@angular/animations": "18.2.6",
-        "@angular/cdk": "18.2.6",
-        "@angular/cli": "18.2.6",
-        "@angular/common": "18.2.6",
-        "@angular/compiler": "18.2.6",
-        "@angular/compiler-cli": "18.2.6",
-        "@angular/core": "18.2.6",
-        "@angular/forms": "18.2.6",
-        "@angular/language-service": "18.2.6",
-        "@angular/platform-browser": "18.2.6",
-        "@angular/platform-browser-dynamic": "18.2.6",
-        "@angular/platform-server": "18.2.6",
-        "@angular/router": "18.2.6",
-        "@angular/ssr": "18.2.6",
-        "@ng-web-apis/universal": "4.6.5",
-        "@nx/angular": "19.8.2",
-        "@nx/node": "19.8.2",
-        "@nx/workspace": "19.8.2",
-        "@schematics/angular": "18.2.6",
-        "@taiga-ui/addon-doc": "4.9.0",
-        "@taiga-ui/addon-mobile": "4.9.0",
-        "@taiga-ui/browserslist-config": "0.221.0",
-        "@taiga-ui/cdk": "4.9.0",
-        "@taiga-ui/commitlint-config": "0.221.0",
-        "@taiga-ui/core": "4.9.0",
-        "@taiga-ui/dompurify": "4.1.7",
-        "@taiga-ui/editor": "4.12.0",
-        "@taiga-ui/eslint-plugin-experience": "0.221.0",
-        "@taiga-ui/event-plugins": "4.2.4",
-        "@taiga-ui/icons": "4.9.0",
-        "@taiga-ui/kit": "4.9.0",
-        "@taiga-ui/legacy": "4.9.0",
-        "@taiga-ui/prettier-config": "0.221.0",
-        "@taiga-ui/stylelint-config": "0.221.0",
-        "@taiga-ui/styles": "4.9.0",
-        "@taiga-ui/tsconfig": "0.221.0",
-        "@types/minimatch": "5.1.2",
-        "@types/node": "22.7.4",
-        "dompurify": "3.1.7",
-        "lint-staged": "15.2.10",
-        "nx": "19.8.2",
-        "rxjs": "7.8.1",
-        "ts-node": "10.9.2",
-        "tslib": "2.7.0",
-        "typescript": "5.5.4"
-    },
-    "overrides": {
-        "prosemirror-model": "1.22.3"
-    }
+    "*.{js,ts,html,svg,yml,md,less,json}": [
+      "prettier --write",
+      "eslint --fix"
+    ]
+  },
+  "browserslist": [
+    "extends @taiga-ui/browserslist-config"
+  ],
+  "prettier": "@taiga-ui/prettier-config",
+  "eslintConfig": {
+    "extends": [
+      "plugin:@taiga-ui/experience/all"
+    ]
+  },
+  "stylelint": {
+    "extends": [
+      "@taiga-ui/stylelint-config"
+    ]
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "18.2.6",
+    "@angular-devkit/core": "18.2.6",
+    "@angular-devkit/schematics": "18.2.6",
+    "@angular/animations": "18.2.6",
+    "@angular/cdk": "18.2.6",
+    "@angular/cli": "18.2.6",
+    "@angular/common": "18.2.6",
+    "@angular/compiler": "18.2.6",
+    "@angular/compiler-cli": "18.2.6",
+    "@angular/core": "18.2.6",
+    "@angular/forms": "18.2.6",
+    "@angular/language-service": "18.2.6",
+    "@angular/platform-browser": "18.2.6",
+    "@angular/platform-browser-dynamic": "18.2.6",
+    "@angular/platform-server": "18.2.6",
+    "@angular/router": "18.2.6",
+    "@angular/ssr": "18.2.6",
+    "@ng-web-apis/universal": "4.6.5",
+    "@nx/angular": "19.8.3",
+    "@nx/node": "19.8.3",
+    "@nx/workspace": "19.8.3",
+    "@schematics/angular": "18.2.6",
+    "@taiga-ui/addon-doc": "4.9.0",
+    "@taiga-ui/addon-mobile": "4.9.0",
+    "@taiga-ui/browserslist-config": "0.221.0",
+    "@taiga-ui/cdk": "4.9.0",
+    "@taiga-ui/commitlint-config": "0.221.0",
+    "@taiga-ui/core": "4.9.0",
+    "@taiga-ui/dompurify": "4.1.7",
+    "@taiga-ui/editor": "4.12.0",
+    "@taiga-ui/eslint-plugin-experience": "0.221.0",
+    "@taiga-ui/event-plugins": "4.2.4",
+    "@taiga-ui/icons": "4.9.0",
+    "@taiga-ui/kit": "4.9.0",
+    "@taiga-ui/legacy": "4.9.0",
+    "@taiga-ui/prettier-config": "0.221.0",
+    "@taiga-ui/stylelint-config": "0.221.0",
+    "@taiga-ui/styles": "4.9.0",
+    "@taiga-ui/tsconfig": "0.221.0",
+    "@types/minimatch": "5.1.2",
+    "@types/node": "22.7.4",
+    "dompurify": "3.1.7",
+    "lint-staged": "15.2.10",
+    "nx": "19.8.3",
+    "rxjs": "7.8.1",
+    "ts-node": "10.9.2",
+    "tslib": "2.7.0",
+    "typescript": "5.5.4"
+  },
+  "overrides": {
+    "prosemirror-model": "1.22.3"
+  }
 }
