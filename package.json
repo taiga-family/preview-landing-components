@@ -51,7 +51,7 @@
         "@angular/platform-server": "18.2.7",
         "@angular/router": "18.2.7",
         "@angular/ssr": "18.2.7",
-        "@ng-web-apis/universal": "4.7.0",
+        "@ng-web-apis/universal": "4.8.0",
         "@nx/angular": "20.0.0",
         "@nx/node": "20.0.0",
         "@nx/workspace": "20.0.0",
