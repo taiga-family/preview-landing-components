@@ -1,0 +1,2 @@
+import{F as r,W as s,ra as a}from"./chunk-FJ6TH3LI.js";var y=s.create({name:"textStyle",priority:101,addOptions(){return{HTMLAttributes:{}}},parseHTML(){return[{tag:"span",getAttrs:t=>t.hasAttribute("style")?{}:!1}]},renderHTML({HTMLAttributes:t}){return["span",r(this.options.HTMLAttributes,t),0]},addCommands(){return{removeEmptyTextStyle:()=>({state:t,commands:e})=>{let n=a(t,this.type);return Object.entries(n).some(([,i])=>!!i)?!0:e.unsetMark(this.name)}}}});export{y as TextStyle,y as default};
+//# sourceMappingURL=chunk-AT2V6F66.js.map
