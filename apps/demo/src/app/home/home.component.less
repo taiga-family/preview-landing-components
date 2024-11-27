@@ -40,8 +40,8 @@
     justify-content: space-between;
 }
 
-.button[data-size][data-shape],
-.error[data-size][data-shape] {
+.button[data-size],
+.error[data-size] {
     .transition(~'color, background');
 
     background: var(--tui-background-base-alt);
@@ -54,7 +54,7 @@
     }
 }
 
-.error[data-size][data-shape] {
+.error[data-size] {
     color: var(--tui-text-negative);
 
     &:hover,
@@ -131,12 +131,12 @@ tui-dialog[data-appearance='call'][data-size] {
         color: #fff;
     }
 
-    .missed [data-appearance='custom'] {
+    .missed[data-appearance='custom'] {
         background: rgb(210, 58, 71);
         transform: rotate(135deg);
     }
 
-    .income [data-appearance='custom'] {
+    .income[data-appearance='custom'] {
         background: rgb(39, 187, 100);
     }
 
@@ -144,6 +144,10 @@ tui-dialog[data-appearance='call'][data-size] {
         display: flex;
         gap: 0.625rem;
     }
+}
+
+.label {
+    display: flex;
 }
 
 @keyframes moveGradient {
