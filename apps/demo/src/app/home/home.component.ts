@@ -20,8 +20,8 @@ import {
     TuiLabel,
     TuiLink,
 } from '@taiga-ui/core';
-import {NgDompurifyPipe, NgDompurifySanitizer} from '@taiga-ui/dompurify';
-import {TuiEditor, TuiEditorSocket, TuiEditorTool} from '@taiga-ui/editor';
+import {NgDompurifySanitizer} from '@taiga-ui/dompurify';
+import {TuiEditor, TuiEditorTool} from '@taiga-ui/editor';
 import {TuiAccordion, TuiCheckbox, TuiPush, TuiSlider, TuiSwitch} from '@taiga-ui/kit';
 import {
     TuiInputDateModule,
@@ -35,14 +35,12 @@ import {
     imports: [
         CommonModule,
         FormsModule,
-        NgDompurifyPipe,
         TuiAccordion,
         TuiButton,
         TuiCalendar,
         TuiCheckbox,
         TuiDropdown,
         TuiEditor,
-        TuiEditorSocket,
         TuiHint,
         TuiIcon,
         TuiInputDateModule,

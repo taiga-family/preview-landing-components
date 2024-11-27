@@ -3,6 +3,7 @@
     "compilerOptions": {
         "baseUrl": ".",
         "target": "es2022",
+        "esModuleInterop": true,
         "useDefineForClassFields": false,
         "typeRoots": ["node_modules/@types"]
     }
