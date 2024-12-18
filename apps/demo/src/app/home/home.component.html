@@ -102,6 +102,25 @@
     </div>
 </div>
 
+<div class="wrapper">
+    <button
+        appearance="secondary"
+        iconStart="@tui.calendar"
+        tuiIconButton
+        type="button"
+        [style.border-radius.%]="100"
+        (click)="onClick()"
+    >
+        Choose a date
+    </button>
+    <span
+        class="date"
+        [class.date_empty]="empty"
+    >
+        {{ date$ | async }}
+    </span>
+</div>
+
 <tui-editor
     [tools]="builtInTools"
     [(ngModel)]="editor"
