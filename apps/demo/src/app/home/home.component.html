@@ -4,7 +4,7 @@
     components
 </h2>
 <tui-input-tag
-    class="tui-space_vertical-10"
+    class="input-tag tui-space_vertical-10"
     [tuiHintContent]="hint"
     [tuiTextfieldLabelOutside]="true"
     [(ngModel)]="tags"
@@ -16,23 +16,37 @@
 
 <div class="flex">
     <div class="date">
-        <tui-input-date
-            required
-            [(ngModel)]="date"
-            (click.capture.stop)="(0)"
-            (keydown.capture.stop)="(0)"
-            (mousedown.capture.stop)="(0)"
-        >
-            Choose date
-        </tui-input-date>
-        <tui-calendar
-            class="calendar"
-            [tuiDropdownOpen]="false"
-            [value]="date"
-            (dayClick)="onDay($event)"
-            (event.prevent.silent)="(0)"
-        />
+        @let breakpoint = breakpoint$ | async;
+
+        @if (breakpoint === 'mobile') {
+            <tui-input-date
+                required
+                [formControl]="control"
+                (keydown.capture.prevent)="openMobileCalendar()"
+                (mousedown.capture.stop)="openMobileCalendar()"
+            >
+                Choose date
+            </tui-input-date>
+        } @else {
+            <tui-input-date
+                required
+                [formControl]="control"
+                (click.capture.stop)="(0)"
+                (keydown.capture.stop)="(0)"
+                (mousedown.capture.stop)="(0)"
+            >
+                Choose date
+            </tui-input-date>
+            <tui-calendar
+                class="calendar"
+                [tuiDropdownOpen]="false"
+                [value]="date"
+                (dayClick)="onDay($event)"
+                (event.prevent.silent)="(0)"
+            />
+        }
     </div>
+
     <div>
         @for (label of labels; track $index) {
             <label tuiLabel>
@@ -47,6 +61,7 @@
             </label>
         }
     </div>
+
     <div class="controls">
         <label class="label">
             <input
