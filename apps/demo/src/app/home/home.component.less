@@ -1,9 +1,26 @@
 @import '@taiga-ui/core/styles/taiga-ui-local';
 
+tui-root {
+    padding: 1.25rem;
+    inline-size: calc(100% - 2.5rem);
+}
+
 .title {
     font-size: 3.5rem;
     line-height: 4.0625rem;
     margin: 0;
+
+    @media @tui-mobile {
+        font-size: 2.5rem;
+        line-height: 2.0625rem;
+    }
+}
+
+.input-tag.input-tag {
+    @media @tui-mobile {
+        margin-top: 1.5rem;
+        margin-bottom: 1rem;
+    }
 }
 
 .t-overlay {
@@ -13,11 +30,19 @@
 .flex {
     display: flex;
     margin-bottom: 1.5625rem;
+
+    @media @tui-mobile {
+        flex-direction: column;
+    }
 }
 
 .date {
-    inline-size: 18rem;
-    margin-right: 2.8125rem;
+    margin-bottom: 1rem;
+
+    @media not @tui-mobile {
+        inline-size: 18rem;
+        margin-right: 2.8125rem;
+    }
 }
 
 .calendar {
@@ -32,7 +57,10 @@
 
 .controls {
     flex: 1;
-    margin-left: 2.8125rem;
+
+    @media not @tui-mobile {
+        margin-left: 2.8125rem;
+    }
 }
 
 .icons {
