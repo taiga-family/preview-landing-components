@@ -75,7 +75,7 @@
         "@types/minimatch": "5.1.2",
         "@types/node": "22.10.7",
         "express": "5.0.1",
-        "less": "4.2.1",
+        "less": "4.2.2",
         "lint-staged": "15.4.1",
         "nx": "20.3.2",
         "rxjs": "7.8.1",
