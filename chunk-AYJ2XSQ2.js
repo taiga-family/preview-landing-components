@@ -1,0 +1,2 @@
+import{E as r,ab as a}from"./chunk-J6F3IY62.js";var u=a.create({name:"tableHeader",addOptions(){return{HTMLAttributes:{}}},content:"block+",addAttributes(){return{colspan:{default:1},rowspan:{default:1},colwidth:{default:null,parseHTML:t=>{let e=t.getAttribute("colwidth");return e?e.split(",").map(l=>parseInt(l,10)):null}}}},tableRole:"header_cell",isolating:!0,parseHTML(){return[{tag:"th"}]},renderHTML({HTMLAttributes:t}){return["th",r(this.options.HTMLAttributes,t),0]}});export{u as TableHeader,u as default};
+//# sourceMappingURL=chunk-AYJ2XSQ2.js.map
