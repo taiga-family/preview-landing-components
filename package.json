@@ -60,7 +60,7 @@
         "@taiga-ui/cdk": "4.28.0",
         "@taiga-ui/commitlint-config": "0.264.0",
         "@taiga-ui/core": "4.28.0",
-        "@taiga-ui/dompurify": "4.1.10",
+        "@taiga-ui/dompurify": "4.1.11",
         "@taiga-ui/editor": "4.21.0",
         "@taiga-ui/eslint-plugin-experience": "0.249.0",
         "@taiga-ui/event-plugins": "4.4.1",
