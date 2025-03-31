@@ -74,7 +74,7 @@
         "@types/express": "5.0.1",
         "@types/minimatch": "5.1.2",
         "@types/node": "22.13.14",
-        "express": "5.0.1",
+        "express": "5.1.0",
         "less": "4.2.2",
         "lint-staged": "15.5.0",
         "nx": "20.6.4",
