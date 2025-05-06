@@ -76,7 +76,7 @@
         "@types/node": "22.15.12",
         "express": "5.1.0",
         "less": "4.3.0",
-        "lint-staged": "15.5.1",
+        "lint-staged": "15.5.2",
         "nx": "20.8.1",
         "rxjs": "7.8.2",
         "ts-node": "10.9.2",
