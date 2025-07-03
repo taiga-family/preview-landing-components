@@ -18,8 +18,8 @@ tui-root {
 
 .input-tag.input-tag {
     @media @tui-mobile {
-        margin-top: 1.5rem;
-        margin-bottom: 1rem;
+        margin-block-start: 1.5rem;
+        margin-block-end: 1rem;
     }
 }
 
@@ -29,7 +29,7 @@ tui-root {
 
 .flex {
     display: flex;
-    margin-bottom: 1.5625rem;
+    margin-block-end: 1.5625rem;
 
     @media @tui-mobile {
         flex-direction: column;
@@ -37,11 +37,11 @@ tui-root {
 }
 
 .date {
-    margin-bottom: 1rem;
+    margin-block-end: 1rem;
 
     @media not @tui-mobile {
         inline-size: 18rem;
-        margin-right: 2.8125rem;
+        margin-inline-end: 2.8125rem;
     }
 }
 
@@ -49,7 +49,7 @@ tui-root {
     box-shadow: var(var(--tui-shadow-small) -medium);
     border-radius: var(--tui-radius-m);
     border: 0.0625rem solid var(--tui-background-neutral-1-hover);
-    margin-top: 0.25rem;
+    margin-block-start: 0.25rem;
     inline-size: 18rem;
     box-sizing: border-box;
     block-size: auto;
@@ -59,7 +59,7 @@ tui-root {
     flex: 1;
 
     @media not @tui-mobile {
-        margin-left: 2.8125rem;
+        margin-inline-start: 2.8125rem;
     }
 }
 
