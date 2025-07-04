@@ -2,7 +2,7 @@ import type {ApplicationConfig, Injector} from '@angular/core';
 import {
     importProvidersFrom,
     INJECTOR,
-    provideExperimentalZonelessChangeDetection,
+    provideZonelessChangeDetection,
 } from '@angular/core';
 import {provideClientHydration} from '@angular/platform-browser';
 import {provideAnimations} from '@angular/platform-browser/animations';
@@ -14,7 +14,7 @@ import {TUI_SANITIZER} from '@taiga-ui/legacy';
 
 export const appConfig: ApplicationConfig = {
     providers: [
-        provideExperimentalZonelessChangeDetection(),
+        provideZonelessChangeDetection(),
         provideClientHydration(),
         provideAnimations(),
         provideRouter([
