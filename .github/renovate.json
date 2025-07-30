@@ -1,4 +1,19 @@
 {
     "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-    "extends": ["github>taiga-family/renovate-config"]
+    "extends": ["github>taiga-family/renovate-config"],
+    "packageRules": [
+        {
+            "description": "Enable major updates for all dependencies",
+            "matchPackagePatterns": ["*"],
+            "matchUpdateTypes": ["major"],
+            "enabled": true
+        },
+        {
+            "description": "Group minor and patch updates together",
+            "matchPackagePatterns": ["*"],
+            "matchUpdateTypes": ["minor", "patch"],
+            "groupName": "all non-major updates",
+            "groupSlug": "all-minor-patch"
+        }
+    ]
 }
