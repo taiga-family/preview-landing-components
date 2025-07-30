@@ -13,7 +13,7 @@ import {
 import {FormControl, FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {TuiMobileCalendarDropdown} from '@taiga-ui/addon-mobile';
 import type {TuiDay} from '@taiga-ui/cdk';
-import {tuiControlValue} from '@taiga-ui/cdk';
+import {tuiControlValue, TuiPlatform} from '@taiga-ui/cdk';
 import {
     TuiBreakpointService,
     TuiButton,
@@ -62,6 +62,7 @@ import type {Observable} from 'rxjs';
         TuiInputTagModule,
         TuiLabel,
         TuiLink,
+        TuiPlatform,
         TuiPush,
         TuiSlider,
         TuiSwitch,
