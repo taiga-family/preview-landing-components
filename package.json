@@ -34,7 +34,7 @@
         ]
     },
     "overrides": {
-        "prosemirror-model": "1.25.2"
+        "prosemirror-model": "1.25.3"
     },
     "devDependencies": {
         "@angular-devkit/core": "20.1.5",
