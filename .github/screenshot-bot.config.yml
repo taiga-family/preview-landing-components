@@ -1,0 +1,6 @@
+diff-paths: [
+    '.*__diff_output__.*', # Cypress
+    '.*.diff.png', # Playwright
+  ]
+
+failed-report-description: '<h3 align="center">Before (main) ← Diff → After (local)</h3>'
