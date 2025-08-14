@@ -33,9 +33,6 @@
             "@taiga-ui/stylelint-config"
         ]
     },
-    "overrides": {
-        "prosemirror-model": "1.25.3"
-    },
     "devDependencies": {
         "@angular-devkit/core": "20.1.6",
         "@angular-devkit/schematics": "20.1.6",
@@ -53,7 +50,10 @@
         "@angular/router": "20.1.7",
         "@angular/ssr": "20.1.6",
         "@ng-web-apis/universal": "4.12.0",
+        "@nx/devkit": "21.3.11",
+        "@nx/playwright": "21.3.11",
         "@nx/workspace": "21.3.11",
+        "@playwright/test": "1.54.2",
         "@schematics/angular": "20.1.6",
         "@taiga-ui/addon-doc": "4.49.0",
         "@taiga-ui/addon-mobile": "4.49.0",
@@ -71,6 +71,7 @@
         "@taiga-ui/prettier-config": "0.311.0",
         "@taiga-ui/stylelint-config": "0.311.0",
         "@taiga-ui/styles": "4.49.0",
+        "@taiga-ui/testing": "4.49.0",
         "@taiga-ui/tsconfig": "0.311.0",
         "@types/express": "5.0.3",
         "@types/minimatch": "5.1.2",
