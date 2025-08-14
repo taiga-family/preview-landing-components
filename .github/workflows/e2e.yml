@@ -12,7 +12,7 @@ jobs:
     name: E2E result
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4.3.0
+      - uses: actions/checkout@v5.0.0
       - uses: taiga-family/ci/actions/setup/variables@v1.141.0
       - uses: taiga-family/ci/actions/setup/node@v1.141.0
       - uses: taiga-family/ci/actions/setup/playwright@v1.141.0
