@@ -2,29 +2,28 @@ name: ⚙️ E2E tests
 on:
   pull_request:
 
-env:
-  RETRY_COUNT: 2
-  PW_RESULT: ./apps/demo/e2e/tests-results
-  FAILED_SCREENSHOTS_PATH: apps/demo/e2e/tests-results
-
 jobs:
   e2e:
     name: E2E result
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4.3.0
-      - uses: taiga-family/ci/actions/setup/variables@v1.143.0
-      - uses: taiga-family/ci/actions/setup/node@v1.143.0
-      - uses: taiga-family/ci/actions/setup/playwright@v1.143.0
+      - uses: taiga-family/ci/actions/setup/variables@v1.144.0
+      - uses: taiga-family/ci/actions/setup/node@v1.144.0
+      - uses: taiga-family/ci/actions/setup/playwright@v1.144.0
       - run: npx nx e2e demo -- --update-snapshots
-      - run: BASE_URL=https://taiga-family.github.io/preview-landing-components/ npx nx e2e demo
+      - run: npx nx e2e demo
         continue-on-error: true
+        env:
+          BASE_URL: https://taiga-family.github.io/preview-landing-components/
 
-      - uses: taiga-family/ci/actions/setup/playwright-combine-failed-screenshot@v1.143.0
-      - uses: taiga-family/ci/actions/setup/playwright-diff-check@v1.143.0
+      - uses: taiga-family/ci/actions/setup/playwright-combine-failed-screenshot@v1.144.0
+        env:
+          FAILED_SCREENSHOTS_PATH: apps/demo/e2e/tests-results
+
+      - uses: taiga-family/ci/actions/setup/playwright-diff-check@v1.144.0
         with:
-          pw-result: ${{ env.PW_RESULT }}
-          playwright-snapshots-artifacts-key: ${{ env.PLAYWRIGHT_SNAPSHOTS_ARTIFACTS_KEY }}
+          pw-result: apps/demo/e2e/tests-results
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
