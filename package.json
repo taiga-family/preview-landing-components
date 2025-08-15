@@ -75,7 +75,7 @@
         "@taiga-ui/tsconfig": "0.312.0",
         "@types/express": "5.0.3",
         "@types/minimatch": "6.0.0",
-        "@types/node": "24.2.1",
+        "@types/node": "24.3.0",
         "express": "5.1.0",
         "less": "4.4.0",
         "lint-staged": "16.1.5",
