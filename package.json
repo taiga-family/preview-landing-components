@@ -53,7 +53,7 @@
         "@nx/devkit": "21.4.0",
         "@nx/playwright": "21.4.0",
         "@nx/workspace": "21.4.0",
-        "@playwright/test": "1.54.2",
+        "@playwright/test": "1.55.0",
         "@schematics/angular": "20.1.6",
         "@taiga-ui/addon-doc": "4.50.0",
         "@taiga-ui/addon-mobile": "4.50.0",
