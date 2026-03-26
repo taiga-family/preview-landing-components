@@ -25,12 +25,14 @@ export default defineConfig({
             hasTouch: true,
         },
     },
-    webServer: {
-        url: baseURL,
-        command: 'npx nx serve demo',
-        reuseExistingServer: true,
-        cwd: workspaceRoot,
-    },
+    webServer: baseURL.includes('localhost')
+        ? {
+              url: baseURL,
+              command: 'npx nx serve demo',
+              reuseExistingServer: true,
+              cwd: workspaceRoot,
+          }
+        : undefined,
     projects: [
         {
             name: 'chromium',
@@ -44,8 +46,6 @@ export default defineConfig({
             scale: 'device',
             threshold: 0.02,
         },
-        toMatchSnapshot: {
-            threshold: 0.02,
-        },
+        toMatchSnapshot: {threshold: 0.02},
     },
 });
