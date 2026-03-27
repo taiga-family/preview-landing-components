@@ -1,0 +1,2 @@
+import{Z as e}from"./chunk-YSCWVF6Z.js";var o=e.create({name:"fontSize",addOptions(){return{types:["textStyle"]}},addGlobalAttributes(){return[{types:this.options.types,attributes:{fontSize:{default:null,parseHTML:({style:t})=>t.fontSize,renderHTML:({fontSize:t})=>t?{style:`font-size: ${t}`}:{}}}}]},addCommands(){return{setFontSize:t=>({chain:n})=>n().setMark("textStyle",{fontSize:t}).run(),unsetFontSize:()=>({chain:t})=>t().setMark("textStyle",{fontSize:null}).removeEmptyTextStyle().run()}}});export{o as a};
+//# sourceMappingURL=chunk-WL5GT4VF.js.map

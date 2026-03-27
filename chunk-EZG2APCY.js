@@ -1,0 +1,2 @@
+import{D as t,ab as e}from"./chunk-YSCWVF6Z.js";var o=e.create({name:"paragraph",priority:1e3,addOptions(){return{HTMLAttributes:{}}},group:"block",content:"inline*",parseHTML(){return[{tag:"p"}]},renderHTML({HTMLAttributes:r}){return["p",t(this.options.HTMLAttributes,r),0]},addCommands(){return{setParagraph:()=>({commands:r})=>r.setNode(this.name)}},addKeyboardShortcuts(){return{"Mod-Alt-0":()=>this.editor.commands.setParagraph()}}});export{o as a};
+//# sourceMappingURL=chunk-EZG2APCY.js.map

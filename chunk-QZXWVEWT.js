@@ -1,0 +1,2 @@
+import{Z as e}from"./chunk-YSCWVF6Z.js";var l=e.create({name:"fontColor",addOptions(){return{types:["textStyle"]}},addGlobalAttributes(){return[{types:this.options.types,attributes:{fontColor:{default:null,renderHTML:({fontColor:t})=>t?{style:`color: ${t}`}:{},parseHTML:({style:t})=>t.color.replaceAll(/['"]+/g,""),keepOnSplit:!1}}}]},addCommands(){return{setFontColor:t=>({chain:o})=>o().setMark("textStyle",{fontColor:t}).run(),unsetFontColor:()=>({chain:t})=>t().setMark("textStyle",{fontColor:null}).run()}}});export{l as a};
+//# sourceMappingURL=chunk-QZXWVEWT.js.map

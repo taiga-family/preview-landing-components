@@ -1,0 +1,2 @@
+import{Z as t}from"./chunk-YSCWVF6Z.js";var a=t.create({name:"customEnter",addKeyboardShortcuts(){return{Enter:({editor:e})=>e.isActive("summary")?(e.commands.selectNodeForward(),e.commands.focus(e.state.selection.anchor+1),globalThis.document&&e.view.nodeDOM(e.state.selection.anchor)?.parentElement?.closest("details")?.querySelector('[data-type="details-content"]')?.prepend(document.createElement("p")),!1):this.editor.chain().createParagraphNear().run()}}});export{a};
+//# sourceMappingURL=chunk-UTRAVK6N.js.map
