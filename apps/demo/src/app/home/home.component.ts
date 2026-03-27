@@ -1,5 +1,4 @@
 import {CommonModule} from '@angular/common';
-import type {TemplateRef} from '@angular/core';
 import {
     ChangeDetectionStrategy,
     ChangeDetectorRef,
@@ -8,12 +7,12 @@ import {
     INJECTOR,
     Injector,
     SecurityContext,
+    type TemplateRef,
     ViewEncapsulation,
 } from '@angular/core';
 import {FormControl, FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {TuiMobileCalendarDropdown} from '@taiga-ui/addon-mobile';
-import type {TuiDay} from '@taiga-ui/cdk';
-import {tuiControlValue, TuiPlatform} from '@taiga-ui/cdk';
+import {tuiControlValue, type TuiDay, TuiPlatform} from '@taiga-ui/cdk';
 import {
     TuiBreakpointService,
     TuiButton,
@@ -41,7 +40,7 @@ import {
     TuiTextfieldControllerModule,
 } from '@taiga-ui/legacy';
 import {PolymorpheusComponent} from '@taiga-ui/polymorpheus';
-import type {Observable} from 'rxjs';
+import {type Observable} from 'rxjs';
 
 @Component({
     standalone: true,
