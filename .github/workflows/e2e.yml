@@ -6,22 +6,22 @@ jobs:
   playwright:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v6.0.2
-      - uses: taiga-family/ci/actions/setup/variables@v1.194.0
-      - uses: taiga-family/ci/actions/setup/node@v1.194.0
-      - uses: taiga-family/ci/actions/setup/playwright@v1.194.0
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+      - uses: taiga-family/ci/actions/setup/variables@3e1b1fc507d59ea30da7e951ae5d47e42f529586 # v1.194.0
+      - uses: taiga-family/ci/actions/setup/node@3e1b1fc507d59ea30da7e951ae5d47e42f529586 # v1.194.0
+      - uses: taiga-family/ci/actions/setup/playwright@3e1b1fc507d59ea30da7e951ae5d47e42f529586 # v1.194.0
       - run: npx nx e2e demo -- --update-snapshots
       - run: npx nx e2e demo
         continue-on-error: true
         env:
           BASE_URL: https://taiga-family.github.io/preview-landing-components/
 
-      - uses: taiga-family/ci/actions/setup/playwright-combine-failed-screenshot@v1.194.0
+      - uses: taiga-family/ci/actions/setup/playwright-combine-failed-screenshot@3e1b1fc507d59ea30da7e951ae5d47e42f529586 # v1.194.0
         env:
           FAILED_SCREENSHOTS_PATH: apps/demo/e2e/tests-results
 
       - name: Upload artifacts / ${{ env.PLAYWRIGHT_SNAPSHOTS_ARTIFACTS_KEY }}
-        uses: actions/upload-artifact@v7.0.0
+        uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7.0.0
         with:
           path: ./apps/demo/e2e/tests-results/**/*-retry2/**/*.diff.png
           name: ${{ env.PLAYWRIGHT_SNAPSHOTS_ARTIFACTS_KEY }}
@@ -51,19 +51,19 @@ jobs:
     needs: [playwright]
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v6.0.2
-      - uses: taiga-family/ci/actions/setup/variables@v1.194.0
-      - uses: taiga-family/ci/actions/setup/node@v1.194.0
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+      - uses: taiga-family/ci/actions/setup/variables@3e1b1fc507d59ea30da7e951ae5d47e42f529586 # v1.194.0
+      - uses: taiga-family/ci/actions/setup/node@3e1b1fc507d59ea30da7e951ae5d47e42f529586 # v1.194.0
 
       - name: Download artifacts for Playwright
         continue-on-error: true
-        uses: actions/download-artifact@v8.0.1
+        uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8.0.1
         with:
           path: ./total/playwright
           pattern: playwright-snapshots-artifacts--*
           merge-multiple: true
       - run: ls -R ./total/playwright || echo "not found"
-      - uses: taiga-family/ci/actions/setup/playwright-diff-check@v1.194.0
+      - uses: taiga-family/ci/actions/setup/playwright-diff-check@3e1b1fc507d59ea30da7e951ae5d47e42f529586 # v1.194.0
         with:
           pw-result: ./total/playwright
 
