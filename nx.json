@@ -1,4 +1,29 @@
 {
+    "$schema": "./node_modules/nx/schemas/nx-schema.json",
+    "analytics": true,
+    "defaultBase": "main",
+    "namedInputs": {
+        "default": ["{projectRoot}/**/*", "sharedGlobals"],
+        "production": [
+            "default",
+            "!{projectRoot}/**/?(*.)+(spec|test).[jt]s?(x)?(.snap)",
+            "!{projectRoot}/tsconfig.spec.json",
+            "!{projectRoot}/jest.config.[jt]s"
+        ],
+        "sharedGlobals": [
+            "{workspaceRoot}/angular.json",
+            "{workspaceRoot}/tsconfig.json",
+            "{workspaceRoot}/tslint.json",
+            "{workspaceRoot}/nx.json"
+        ]
+    },
+    "targetDefaults": {
+        "build": {
+            "cache": true,
+            "dependsOn": ["^build"],
+            "inputs": ["production", "^production"]
+        }
+    },
     "tasksRunnerOptions": {
         "default": {
             "options": {
@@ -9,30 +34,5 @@
     },
     "tui": {
         "enabled": false
-    },
-    "$schema": "./node_modules/nx/schemas/nx-schema.json",
-    "targetDefaults": {
-        "build": {
-            "dependsOn": ["^build"],
-            "inputs": ["production", "^production"],
-            "cache": true
-        }
-    },
-    "namedInputs": {
-        "default": ["{projectRoot}/**/*", "sharedGlobals"],
-        "sharedGlobals": [
-            "{workspaceRoot}/angular.json",
-            "{workspaceRoot}/tsconfig.json",
-            "{workspaceRoot}/tslint.json",
-            "{workspaceRoot}/nx.json"
-        ],
-        "production": [
-            "default",
-            "!{projectRoot}/**/?(*.)+(spec|test).[jt]s?(x)?(.snap)",
-            "!{projectRoot}/tsconfig.spec.json",
-            "!{projectRoot}/jest.config.[jt]s"
-        ]
-    },
-    "defaultBase": "main",
-    "analytics": true
+    }
 }

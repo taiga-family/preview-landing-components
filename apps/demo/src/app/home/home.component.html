@@ -3,12 +3,16 @@
     <br />
     components
 </h2>
-<tui-input-tag
+<tui-textfield
+    multi
     class="input-tag tui-space_vertical-10"
-    [tuiHintContent]="hint"
-    [tuiTextfieldLabelOutside]="true"
-    [(ngModel)]="tags"
-/>
+>
+    <input
+        tuiInputChip
+        [(ngModel)]="tags"
+    />
+    <tui-icon [tuiTooltip]="hint" />
+</tui-textfield>
 
 <ng-template #hint>
     <span [innerHtml]="purify('Customizable for <b>any use</b> case')"></span>
@@ -19,27 +23,36 @@
         @let breakpoint = breakpoint$ | async;
 
         @if (breakpoint === 'mobile') {
-            <tui-input-date
+            <tui-textfield
                 required
-                [formControl]="control"
                 (keydown.capture.prevent)="openMobileCalendar()"
                 (mousedown.capture.stop)="openMobileCalendar()"
             >
-                Choose date
-            </tui-input-date>
+                <label tuiLabel>Choose date</label>
+
+                <input
+                    tuiInputDate
+                    [formControl]="control"
+                />
+                <tui-calendar *tuiDropdown />
+            </tui-textfield>
         } @else {
-            <tui-input-date
+            <tui-textfield
                 required
-                [formControl]="control"
                 (click.capture.stop)="(0)"
                 (keydown.capture.stop)="(0)"
                 (mousedown.capture.stop)="(0)"
             >
-                Choose date
-            </tui-input-date>
+                <label tuiLabel>Choose date</label>
+
+                <input
+                    tuiInputDate
+                    [formControl]="control"
+                />
+                <tui-calendar *tuiDropdown />
+            </tui-textfield>
             <tui-calendar
                 class="calendar"
-                [tuiDropdownOpen]="false"
                 [value]="date"
                 (dayClick)="onDay($event)"
                 (event.prevent.silent)="(0)"
@@ -78,12 +91,12 @@
             Push notification
         </label>
         <input
-            size="m"
             step="any"
             tuiSlider
             type="range"
             class="tui-space_vertical-6"
             [max]="140"
+            [style.--tui-thumb-size.rem]="0.75"
             [(ngModel)]="slider"
         />
         <div class="icons">
@@ -192,11 +205,10 @@
 
 <br />
 
+<!-- TODO: (Taiga UI migration) tui-accordion-item has been removed. Use new tuiAccordion instead. See example https://taiga-ui.dev/components/accordion -->
 <tui-accordion>
     @for (item of questions; track $index) {
-        <tui-accordion-item [open]="true">
-            {{ item.question }}
-            <ng-template tuiAccordionItemContent>{{ item.answer }}</ng-template>
-        </tui-accordion-item>
+        <button [tuiAccordion]="true">{{ item.question }}</button>
+        <tui-expand>{{ item.answer }}</tui-expand>
     }
 </tui-accordion>
