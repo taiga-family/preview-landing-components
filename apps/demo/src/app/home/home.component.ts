@@ -10,35 +10,36 @@ import {
     type TemplateRef,
     ViewEncapsulation,
 } from '@angular/core';
+import {toObservable} from '@angular/core/rxjs-interop';
 import {FormControl, FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {TuiMobileCalendarDropdown} from '@taiga-ui/addon-mobile';
+import {
+    TUI_CALENDAR_DATE_STREAM,
+    TuiMobileCalendarDropdown,
+} from '@taiga-ui/addon-mobile';
 import {tuiControlValue, type TuiDay, TuiPlatform} from '@taiga-ui/cdk';
 import {
-    TuiBreakpointService,
+    TUI_BREAKPOINT,
     TuiButton,
     TuiCalendar,
+    TuiCheckbox,
     TuiDialogService,
     TuiDropdown,
     TuiHint,
     TuiIcon,
     TuiLabel,
     TuiLink,
+    TuiSlider,
 } from '@taiga-ui/core';
 import {NgDompurifySanitizer} from '@taiga-ui/dompurify';
 import {TuiEditor, TuiEditorTool} from '@taiga-ui/editor';
 import {
-    TUI_CALENDAR_DATE_STREAM,
     TuiAccordion,
-    TuiCheckbox,
+    TuiInputChip,
+    TuiInputDate,
     TuiPush,
-    TuiSlider,
     TuiSwitch,
+    TuiTooltip,
 } from '@taiga-ui/kit';
-import {
-    TuiInputDateModule,
-    TuiInputTagModule,
-    TuiTextfieldControllerModule,
-} from '@taiga-ui/legacy';
 import {PolymorpheusComponent} from '@taiga-ui/polymorpheus';
 import {type Observable} from 'rxjs';
 
@@ -57,18 +58,18 @@ import {type Observable} from 'rxjs';
         TuiEditor,
         TuiHint,
         TuiIcon,
-        TuiInputDateModule,
-        TuiInputTagModule,
+        TuiInputChip,
+        TuiInputDate,
         TuiLabel,
         TuiLink,
         TuiPlatform,
         TuiPush,
         TuiSlider,
         TuiSwitch,
-        TuiTextfieldControllerModule,
+        TuiTooltip,
     ],
     templateUrl: './home.component.html',
-    styleUrls: ['./home.component.less'],
+    styleUrl: './home.component.less',
     encapsulation: ViewEncapsulation.None,
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
@@ -77,8 +78,9 @@ export default class HomeComponent {
     private readonly dialogs = inject(TuiDialogService);
     private readonly cd = inject(ChangeDetectorRef);
     private readonly injector = inject(INJECTOR);
+
     protected readonly control = new FormControl<TuiDay | null>(null);
-    protected readonly breakpoint$ = inject(TuiBreakpointService);
+    protected readonly breakpoint$ = toObservable(inject(TUI_BREAKPOINT));
 
     protected readonly dialog$: Observable<TuiDay> = this.dialogs.open(
         new PolymorpheusComponent(
@@ -94,8 +96,8 @@ export default class HomeComponent {
             }),
         ),
         {
-            size: 'fullscreen',
-            closeable: false,
+            appearance: 'fullscreen',
+            closable: false,
             data: {single: true},
         },
     );
@@ -131,7 +133,7 @@ export default class HomeComponent {
         this.dialogs
             .open(content, {
                 appearance: 'call',
-                closeable: false,
+                closable: false,
                 dismissible: false,
             })
             .subscribe();

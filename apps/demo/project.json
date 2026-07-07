@@ -1,18 +1,24 @@
 {
-    "name": "demo",
     "$schema": "../../node_modules/nx/schemas/project-schema.json",
+    "name": "demo",
     "projectType": "application",
     "sourceRoot": "apps/demo/src",
     "targets": {
         "build": {
+            "configurations": {
+                "development": {
+                    "extractLicenses": false,
+                    "optimization": false,
+                    "sourceMap": true
+                },
+                "production": {
+                    "outputHashing": "all",
+                    "sourceMap": true
+                }
+            },
+            "defaultConfiguration": "production",
             "executor": "@angular/build:application",
             "options": {
-                "outputPath": "dist/demo",
-                "index": "apps/demo/src/index.html",
-                "browser": "apps/demo/src/main.ts",
-                "polyfills": [],
-                "tsConfig": "apps/demo/tsconfig.app.json",
-                "baseHref": "./",
                 "assets": [
                     "apps/demo/src/favicon.ico",
                     "apps/demo/src/assets",
@@ -22,40 +28,22 @@
                         "output": "assets/taiga-ui/icons"
                     }
                 ],
-                "styles": ["@taiga-ui/core/styles/taiga-ui-theme.less", "apps/demo/src/styles.less"],
-                "server": "apps/demo/src/main.server.ts",
+                "baseHref": "./",
+                "browser": "apps/demo/src/main.ts",
+                "index": "apps/demo/src/index.html",
+                "outputPath": "dist/demo",
+                "polyfills": [],
                 "prerender": {
                     "discoverRoutes": true,
                     "routesFile": "apps/demo/src/routes.txt"
                 },
+                "server": "apps/demo/src/main.server.ts",
                 "ssr": {
                     "entry": "apps/demo/server.ts"
-                }
-            },
-            "configurations": {
-                "production": {
-                    "outputHashing": "all",
-                    "sourceMap": true
                 },
-                "development": {
-                    "optimization": false,
-                    "extractLicenses": false,
-                    "sourceMap": true
-                }
-            },
-            "defaultConfiguration": "production"
-        },
-        "serve": {
-            "executor": "@angular/build:dev-server",
-            "configurations": {
-                "production": {
-                    "buildTarget": "demo:build:production"
-                },
-                "development": {
-                    "buildTarget": "demo:build:development"
-                }
-            },
-            "defaultConfiguration": "development"
+                "styles": ["@taiga-ui/styles/taiga-ui-theme.less", "apps/demo/src/styles.less"],
+                "tsConfig": "apps/demo/tsconfig.app.json"
+            }
         },
         "e2e": {
             "executor": "nx:run-commands",
@@ -70,6 +58,18 @@
                 "command": "playwright test --config {projectRoot}/playwright.config.ts --ui --debug --update-snapshots",
                 "forwardAllArgs": true
             }
+        },
+        "serve": {
+            "configurations": {
+                "development": {
+                    "buildTarget": "demo:build:development"
+                },
+                "production": {
+                    "buildTarget": "demo:build:production"
+                }
+            },
+            "defaultConfiguration": "development",
+            "executor": "@angular/build:dev-server"
         }
     }
 }

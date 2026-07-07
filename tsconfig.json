@@ -2,10 +2,11 @@
     "extends": "@taiga-ui/tsconfig",
     "compilerOptions": {
         "baseUrl": ".",
-        "target": "es2022",
-        "moduleResolution": "bundler",
         "esModuleInterop": true,
-        "useDefineForClassFields": false,
-        "typeRoots": ["node_modules/@types"]
+        "ignoreDeprecations": "6.0",
+        "moduleResolution": "bundler",
+        "target": "es2022",
+        "typeRoots": ["node_modules/@types"],
+        "useDefineForClassFields": false
     }
 }
