@@ -1,0 +1,2 @@
+import{ob as t}from"./chunk-7HLB475I.js";import"./chunk-P7Y7N6AM.js";var a=t.create({name:"customEnter",addKeyboardShortcuts(){return{Enter:({editor:e})=>e.isActive("summary")?(e.commands.selectNodeForward(),e.commands.focus(e.state.selection.anchor+1),globalThis.document&&e.view.nodeDOM(e.state.selection.anchor)?.parentElement?.closest("details")?.querySelector('[data-type="details-content"]')?.prepend(document.createElement("p")),!1):this.editor.chain().createParagraphNear().run()}}});export{a as TuiCustomEnter};
+//# sourceMappingURL=chunk-XOJ5YOTF.js.map

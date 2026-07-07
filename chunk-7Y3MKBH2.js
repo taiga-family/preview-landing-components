@@ -1,0 +1,2 @@
+import{f as i,j as r}from"./chunk-KH6VANCC.js";import{$ as e}from"./chunk-7HLB475I.js";import"./chunk-P7Y7N6AM.js";var u=r.extend({renderHTML({node:o,HTMLAttributes:l}){let{colgroup:a,tableWidth:t,tableMinWidth:n}=i(o,this.options.cellMinWidth);return["div",{class:"tui-table-wrapper"},["table",e(this.options.HTMLAttributes,l,{style:t?`width: ${t}`:`min-width: ${n}`}),a,["tbody",0]]]}}).configure({resizable:!0,lastColumnResizable:!0,allowTableNodeSelection:!0}).extend();export{u as TuiTable};
+//# sourceMappingURL=chunk-7Y3MKBH2.js.map
