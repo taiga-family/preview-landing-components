@@ -29,16 +29,11 @@
         ]
     },
     "overrides": {
-        "@angular/cdk": "$@angular/cdk",
-        "@angular/common": "$@angular/common",
         "@angular/compiler": "$@angular/compiler",
         "@angular/compiler-cli": "$@angular/compiler-cli",
         "@angular/core": "$@angular/core",
         "@angular/platform-browser": "$@angular/platform-browser",
         "@angular/platform-browser-dynamic": "$@angular/platform-browser-dynamic",
-        "@angular/platform-server": "$@angular/platform-server",
-        "@angular/ssr": "$@angular/ssr",
-        "rxjs": "$rxjs",
         "typescript": "$typescript"
     },
     "devDependencies": {

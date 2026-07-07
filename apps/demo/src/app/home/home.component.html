@@ -10,7 +10,9 @@
     <input
         tuiInputChip
         [(ngModel)]="tags"
+
     />
+    <tui-input-chip *tuiItem />
     <tui-icon [tuiTooltip]="hint" />
 </tui-textfield>
 
@@ -205,8 +207,7 @@
 
 <br />
 
-<!-- TODO: (Taiga UI migration) tui-accordion-item has been removed. Use new tuiAccordion instead. See example https://taiga-ui.dev/components/accordion -->
-<tui-accordion>
+<tui-accordion [closeOthers]="false">
     @for (item of questions; track $index) {
         <button [tuiAccordion]="true">{{ item.question }}</button>
         <tui-expand>{{ item.answer }}</tui-expand>
