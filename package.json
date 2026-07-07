@@ -29,21 +29,23 @@
         ]
     },
     "overrides": {
+        "@angular/cdk": "$@angular/cdk",
+        "@angular/ssr": "$@angular/ssr",
         "@angular/common": "$@angular/common",
         "@angular/compiler": "$@angular/compiler",
         "@angular/compiler-cli": "$@angular/compiler-cli",
         "@angular/core": "$@angular/core",
+        "@angular/platform-browser": "$@angular/platform-browser",
         "@angular/platform-browser-dynamic": "$@angular/platform-browser-dynamic",
-        "@taiga-ui/eslint-plugin-experience-next": {
-            "typescript": "$typescript"
-        },
-        "rxjs": "$rxjs"
+        "@angular/platform-server": "$@angular/platform-server",
+        "rxjs": "$rxjs",
+        "typescript": "$typescript"
     },
     "devDependencies": {
         "@angular-devkit/core": "22.0.5",
         "@angular-devkit/schematics": "22.0.5",
         "@angular/animations": "22.0.5",
-        "@angular/build": "22.0.5",
+        "@angular/build": "^21.2.18",
         "@angular/cdk": "22.0.3",
         "@angular/common": "22.0.5",
         "@angular/compiler": "22.0.5",
