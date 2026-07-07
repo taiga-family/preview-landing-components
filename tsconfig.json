@@ -3,6 +3,7 @@
     "compilerOptions": {
         "baseUrl": ".",
         "esModuleInterop": true,
+        "ignoreDeprecations": "6.0",
         "moduleResolution": "bundler",
         "target": "es2022",
         "typeRoots": ["node_modules/@types"],

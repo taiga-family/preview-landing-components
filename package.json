@@ -30,7 +30,6 @@
     },
     "overrides": {
         "@angular/cdk": "$@angular/cdk",
-        "@angular/ssr": "$@angular/ssr",
         "@angular/common": "$@angular/common",
         "@angular/compiler": "$@angular/compiler",
         "@angular/compiler-cli": "$@angular/compiler-cli",
@@ -38,6 +37,7 @@
         "@angular/platform-browser": "$@angular/platform-browser",
         "@angular/platform-browser-dynamic": "$@angular/platform-browser-dynamic",
         "@angular/platform-server": "$@angular/platform-server",
+        "@angular/ssr": "$@angular/ssr",
         "rxjs": "$rxjs",
         "typescript": "$typescript"
     },
@@ -45,7 +45,7 @@
         "@angular-devkit/core": "22.0.5",
         "@angular-devkit/schematics": "22.0.5",
         "@angular/animations": "22.0.5",
-        "@angular/build": "^21.2.18",
+        "@angular/build": "22.0.5",
         "@angular/cdk": "22.0.3",
         "@angular/common": "22.0.5",
         "@angular/compiler": "22.0.5",
